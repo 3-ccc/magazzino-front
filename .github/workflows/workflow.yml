@@ -19,6 +19,8 @@ jobs:
 
       - name: install build
         run: npm install && CI=false && npm run build
+        env:
+          REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
 
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
