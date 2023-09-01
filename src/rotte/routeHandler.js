@@ -41,89 +41,89 @@ function RouterHandler({ setSelezionato }) {
 
   //ricordarsi colorare pulsanti da route?
 
-
+const base = process.env.REACT_BASE_URL
 
 
   return (
     <Routes>
       <Route index element={<HomePage setSelezionato={setSelezionato} />} />
-      <Route path="/home" element={
+      <Route path={base+"/home"} element={
         <ProtectedRoute>
           <Navigate replace to="/" />
         </ProtectedRoute>
       } />
-      <Route path="/magazzino" element={ 
+      <Route path={base+"/magazzino"} element={ 
         <ProtectedRoute>
           <ListaProdotti />
         </ProtectedRoute>
       } />
-      <Route path="/listacarico" element={
+      <Route path={base+"/listacarico"} element={
         <ProtectedRoute>
           <ListaSCarico mode={'carico'} />
         </ProtectedRoute>
       } />
-      <Route path="/listascarico" element={
+      <Route path={base+"/listascarico"} element={
         <ProtectedRoute>
           <ListaSCarico mode={'scarico'} />
         </ProtectedRoute>
       } />
       
       {/** andranno annidate in lista..? */}
-      <Route path="/carico" element={
+      <Route path={base+"/carico"} element={
         <ProtectedRoute>
           <SCarico mode={'carico'} />
         </ProtectedRoute>
       } />
-      <Route path="/scarico" element={
+      <Route path={base+"/scarico"} element={
         <ProtectedRoute>
           <SCarico mode={'scarico'} />
         </ProtectedRoute>
       } />
-      <Route path="/operazioni" element={
+      <Route path={base+"/operazioni"} element={
         <ProtectedRoute>
           <Operazioni />
         </ProtectedRoute>
       } />
 
-      <Route path="/altro" element={
+      <Route path={base+"/altro"} element={
         <ProtectedRoute>
           <Altro />
         </ProtectedRoute>
       } />
-      <Route path="/altro/nomi" element={
+      <Route path={base+"/altro/nomi"} element={
         <ProtectedRoute>
           <NoCategorie type={'nomi'} />
         </ProtectedRoute>
       } />
-      <Route path="/altro/materiali" element={
+      <Route path={base+"/altro/materiali"} element={
         <ProtectedRoute>
           <NoCategorie type={'materiali'} />
         </ProtectedRoute>
       } />
-      <Route path="/altro/misure" element={
+      <Route path={base+"/altro/misure"} element={
         <ProtectedRoute>
           <NoCategorie type={'misure'} />
         </ProtectedRoute>
       
       } />
-      <Route path="/altro/colori" element={
+      <Route path={base+"/altro/colori"} element={
         <ProtectedRoute>
           <NoCategorie type={'colori'} />
         </ProtectedRoute>
       } />
-      <Route path="/altro/categorie" element={
+      <Route path={base+"/altro/categorie"} element={
         <ProtectedRoute>
           <Categorie type={'categorie'} />
         </ProtectedRoute>
       } />
-      <Route path="/altro/immagini" element={
+      <Route path={base+"/altro/immagini"} element={
         <ProtectedRoute>
           <ImgUploader />
         </ProtectedRoute>
       } />
 
       <Route
-          path="utenti"
+          path={base+"utenti"}
           element={
           <ProtectedRoute>
             <Utenti/>
@@ -131,13 +131,13 @@ function RouterHandler({ setSelezionato }) {
           }
         />
 
-      <Route path="/login" element={<Login />} />
+      <Route path={base+"/login"} element={<Login />} />
 
       {/*<Route path="/utenti" element={<CartPage />} />*/}
 
-      <Route path="/*" element={<Error404 />} />
+      <Route path={base+"/*"} element={<Error404 />} />
 
-      <Route path="magazzino">
+      <Route path={base+"magazzino"}>
             {/*<ProtectedRoute ruoli={["ufficio", "admin", "magazzino"]}>*/}
             {/*</ProtectedRoute>*/}
 
@@ -163,7 +163,7 @@ function RouterHandler({ setSelezionato }) {
         />
       </Route>
 
-      <Route path="account">
+      <Route path={base+"account"}>
             {/*<ProtectedRoute ruoli={["ufficio", "admin", "magazzino"]}>*/}
             {/*</ProtectedRoute>*/}
             
@@ -196,7 +196,7 @@ function RouterHandler({ setSelezionato }) {
           }
         />
       </Route>
-      <Route path="/tab" element={<ReportTot />} />
+      {/*<Route path="/tab" element={<ReportTot />} />*/}
 
       {/*<Route
         path="/account"
