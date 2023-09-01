@@ -20,7 +20,7 @@ root.render(
     <PersistGate loading={null} persistor={persistedStore}>
       <DarkModeProvider>
       <ScrollProvider>
-        <BrowserRouter /*basename="/magazzino-front"*/>
+        <BrowserRouter basename="/magazzino-front">
           <App />
         </BrowserRouter>
       </ScrollProvider>
