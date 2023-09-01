@@ -41,7 +41,7 @@ function RouterHandler({ setSelezionato }) {
 
   //ricordarsi colorare pulsanti da route?
 
-const base = process.env.REACT_BASE_URL
+const base = process.env.REACT_APP_SITE_URL
 
 
   return (
