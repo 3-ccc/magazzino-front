@@ -6,7 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { DarkModeProvider } from "./tema/DarkModeContext";
 import { MsgProvider } from "./tema/MsgContext";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import { store, persistedStore } from "./store/store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
@@ -22,9 +22,9 @@ root.render(
       <DarkModeProvider>
       <MsgProvider>
       <ScrollProvider>
-        <BrowserRouter basename="/magazzino-front">
+        <HashRouter /*basename="/magazzino-front"*/>
           <App />
-        </BrowserRouter>
+        </HashRouter>
       </ScrollProvider>
       </MsgProvider>
       </DarkModeProvider>
