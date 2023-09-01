@@ -22,7 +22,7 @@ root.render(
       <DarkModeProvider>
       <MsgProvider>
       <ScrollProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/magazzino-front">
           <App />
         </BrowserRouter>
       </ScrollProvider>
