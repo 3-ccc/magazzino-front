@@ -41,89 +41,89 @@ function RouterHandler({ setSelezionato }) {
 
   //ricordarsi colorare pulsanti da route?
 
-const base = process.env.REACT_APP_SITE_URL
+
 
 
   return (
     <Routes>
       <Route index element={<HomePage setSelezionato={setSelezionato} />} />
-      <Route path={base+"/home"} element={
+      <Route path="/home" element={
         <ProtectedRoute>
           <Navigate replace to="/" />
         </ProtectedRoute>
       } />
-      <Route path={base+"/magazzino"} element={ 
+      <Route path="/magazzino" element={ 
         <ProtectedRoute>
           <ListaProdotti />
         </ProtectedRoute>
       } />
-      <Route path={base+"/listacarico"} element={
+      <Route path="/listacarico" element={
         <ProtectedRoute>
           <ListaSCarico mode={'carico'} />
         </ProtectedRoute>
       } />
-      <Route path={base+"/listascarico"} element={
+      <Route path="/listascarico" element={
         <ProtectedRoute>
           <ListaSCarico mode={'scarico'} />
         </ProtectedRoute>
       } />
       
       {/** andranno annidate in lista..? */}
-      <Route path={base+"/carico"} element={
+      <Route path="/carico" element={
         <ProtectedRoute>
           <SCarico mode={'carico'} />
         </ProtectedRoute>
       } />
-      <Route path={base+"/scarico"} element={
+      <Route path="/scarico" element={
         <ProtectedRoute>
           <SCarico mode={'scarico'} />
         </ProtectedRoute>
       } />
-      <Route path={base+"/operazioni"} element={
+      <Route path="/operazioni" element={
         <ProtectedRoute>
           <Operazioni />
         </ProtectedRoute>
       } />
 
-      <Route path={base+"/altro"} element={
+      <Route path="/altro" element={
         <ProtectedRoute>
           <Altro />
         </ProtectedRoute>
       } />
-      <Route path={base+"/altro/nomi"} element={
+      <Route path="/altro/nomi" element={
         <ProtectedRoute>
           <NoCategorie type={'nomi'} />
         </ProtectedRoute>
       } />
-      <Route path={base+"/altro/materiali"} element={
+      <Route path="/altro/materiali" element={
         <ProtectedRoute>
           <NoCategorie type={'materiali'} />
         </ProtectedRoute>
       } />
-      <Route path={base+"/altro/misure"} element={
+      <Route path="/altro/misure" element={
         <ProtectedRoute>
           <NoCategorie type={'misure'} />
         </ProtectedRoute>
       
       } />
-      <Route path={base+"/altro/colori"} element={
+      <Route path="/altro/colori" element={
         <ProtectedRoute>
           <NoCategorie type={'colori'} />
         </ProtectedRoute>
       } />
-      <Route path={base+"/altro/categorie"} element={
+      <Route path="/altro/categorie" element={
         <ProtectedRoute>
           <Categorie type={'categorie'} />
         </ProtectedRoute>
       } />
-      <Route path={base+"/altro/immagini"} element={
+      <Route path="/altro/immagini" element={
         <ProtectedRoute>
           <ImgUploader />
         </ProtectedRoute>
       } />
 
       <Route
-          path={base+"utenti"}
+          path="utenti"
           element={
           <ProtectedRoute>
             <Utenti/>
@@ -131,13 +131,13 @@ const base = process.env.REACT_APP_SITE_URL
           }
         />
 
-      <Route path={base+"/login"} element={<Login />} />
+      <Route path="/login" element={<Login />} />
 
       {/*<Route path="/utenti" element={<CartPage />} />*/}
 
-      <Route path={base+"/*"} element={<Error404 />} />
+      <Route path="/*" element={<Error404 />} />
 
-      <Route path={base+"magazzino"}>
+      <Route path="magazzino">
             {/*<ProtectedRoute ruoli={["ufficio", "admin", "magazzino"]}>*/}
             {/*</ProtectedRoute>*/}
 
@@ -163,7 +163,7 @@ const base = process.env.REACT_APP_SITE_URL
         />
       </Route>
 
-      <Route path={base+"account"}>
+      <Route path="account">
             {/*<ProtectedRoute ruoli={["ufficio", "admin", "magazzino"]}>*/}
             {/*</ProtectedRoute>*/}
             
@@ -196,7 +196,7 @@ const base = process.env.REACT_APP_SITE_URL
           }
         />
       </Route>
-      {/*<Route path="/tab" element={<ReportTot />} />*/}
+      <Route path="/tab" element={<ReportTot />} />
 
       {/*<Route
         path="/account"
