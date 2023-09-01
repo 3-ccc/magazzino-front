@@ -22,7 +22,7 @@ root.render(
       <DarkModeProvider>
       <MsgProvider>
       <ScrollProvider>
-        <HashRouter /*basename="/magazzino-front"*/>
+        <HashRouter basename="/magazzino-front">
           <App />
         </HashRouter>
       </ScrollProvider>
