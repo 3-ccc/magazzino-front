@@ -1,0 +1,198 @@
+.aboutPage {
+    margin: 2em;
+  }
+  
+  .aboutPage > .text {
+    display: flex;
+  }
+  
+  .detailsPage {
+    margin: 2em;
+  }
+  
+  .sfondo1 {
+    background-color: #c9de8c;
+    color: #77ae59;
+    border-color: #77ae59;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+  }
+  
+  .sfondo2 {
+    background-color: #77ae59;
+    color: #c9de8c;
+    border-color: #c9de8c;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+  }
+  
+  .sfondo3 {
+    background-color: #244e23;
+    color: #f1f4dc;
+    border-color: #f1f4dc;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+  }
+  
+  .overlay1 {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    background: rgba(#77ae59, 0.85);
+  }
+  
+  .wrapper {
+    display: block;
+  }
+  
+  #sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100%;
+    position: fixed;
+    left: -250px;
+    /* top layer */
+    z-index: 9999;
+    background-color: #77ae59;
+    /*transform: translate(-100vw);*/
+    transition: all 0.5s;
+  }
+  #sidebarCollapse {
+    position: fixed;
+    left: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    /* top layer */
+    z-index: 9999;
+    background-color: #77ae59;
+    /*transform: translate(-100vw);*/
+    transition: all 0.5s;
+  }
+  #sidebarCollapse.active {
+    transform: translate(250px);
+  }
+  #sidebar.active {
+    transform: translate(250px);
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    /* full screen */
+    width:  100%;
+    height: calc(100% + 130px);
+    /* transparent black */
+    background: rgba(0, 0, 0, 0.7);
+    background-image: url('../img/downloadicon.png');
+    background-repeat:no-repeat;
+    background-position-y: calc(50% + 65px);
+    background-position-x: 50%;
+    
+    /* middle layer, i.e. appears below the sidebar */
+    z-index: 9998;
+    opacity: 0;
+    /* animate the transition */
+    transition: all 0.5s ease-in-out;
+  }
+  /* display .overlay when it has the .active className */
+  .overlay.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  /*CSS for the MAP*/
+  
+  .wrapper-map {
+    position: fixed;
+  }
+  
+  .inner-shadow-darkb {
+    box-shadow: inset 0px -16px 12px -12px rgba(255, 255, 255, 0.5);
+  }
+  .inner-shadow-darkt {
+    box-shadow: inset 0px 16px 12px -12px rgba(255, 255, 255, 0.5);
+  }
+  
+  .inner-shadow-dark {
+    box-shadow: inset 0px -16px 12px -12px rgba(255, 255, 255, 0.5),
+      inset 0px 16px 12px -12px rgba(255, 255, 255, 0.5);
+  }
+  
+  .inner-shadow-lightb {
+    box-shadow: inset 0px -16px 12px -12px rgba(0, 0, 0, 0.5);
+  }
+  .inner-shadow-lightt {
+    box-shadow: inset 0px 16px 12px -12px rgba(0, 0, 0, 0.5);
+  }
+  
+  .inner-shadow-light {
+    box-shadow: inset 0px -16px 12px -12px rgba(0, 0, 0, 0.5),
+      inset 0px 16px 12px -12px rgba(0, 0, 0, 0.5);
+  }
+  
+  #upload {
+    opacity: 0;
+}
+
+#upload-label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.image-area {
+    border: 2px dashed rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    position: relative;
+}
+
+.image-area::before {
+    content: 'Uploaded image result';
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    z-index: 1;
+}
+
+.image-area img {
+    z-index: 2;
+    position: relative;
+}
+
+/*
+.table-strip-custom>tbody>tr:nth-child(odd)>td, 
+.table-strip-custom>tbody>tr:nth-child(odd)>th {
+   background-color: red;
+ }
+
+.table-strip-custom>tbody>tr:nth-child(even)>td, 
+.table-strip-custom>tbody>tr:nth-child(even)>th {
+   background-color: dodgerblue;
+ }
+ */
+
+.oddstripel {
+   background-color: #f1f2f4 !important;
+ }
+.evenstripel {
+   background-color: #e3e6e8 !important;
+ }
+
+.oddstriped {
+  background-color: #505962 !important;
+}
+.evenstriped {
+  background-color: #454d54 !important;
+}
+

@@ -1,0 +1,123 @@
+import { DarkModeContext } from "../../tema/DarkModeContext";
+import { useContext, useEffect, useState } from "react";
+import { useWindowDimensions } from "../../altro/windowDimensions";
+
+function FiltriUte({ filtri, setFiltri }) {
+  const { darkMode } = useContext(DarkModeContext);
+  const { wi } = useWindowDimensions();
+  const [buttonState, setButtonState] = useState(false);
+
+  //console.log(filtri);
+
+  useEffect(() => {
+    if (wi >= 992 && buttonState === false) {
+      document.getElementById("buttoncollapse").click();
+    }
+  }, [wi, buttonState]);
+  useEffect(() => {
+    if (wi >= 992 /*&& buttonState === false*/) {
+      document.getElementById("collapsefilter").classList.add('show');
+    }
+    //console.log('cambio tema')
+
+  }, [darkMode]);
+
+  /*
+filtri
+  username    ->asc-desc
+  */
+
+  
+  //tra 2 date sara complesso---
+  
+  return (
+    <div style={{marginLeft:'2em', marginRight:'2em'}}>
+
+      {
+        <button
+          id="buttoncollapse"
+          className={
+            "btn btn-outline-success " + (darkMode ? "nav2button" : "nav2buttonl")
+          }
+          type="button"
+          style={{ display: wi >= 992 ? "none" : "block" }}
+          data-toggle="collapse"
+          data-target="#collapsefilter"
+          aria-expanded="false"
+          aria-controls="collapsefilter"
+          onClick={() => {
+            setButtonState(!buttonState);
+          }}
+        >
+          <i className="bi bi-list"></i>
+        </button>
+      }
+      {
+        <div
+          className={
+            "collapse card mb-1 " + (darkMode ? "sfondocard1" : "sfondocard3")
+          }
+          style={{ width: "100%" }}
+          id="collapsefilter"
+        >
+          {
+            <div className="d-flex flex-wrap justify-content-center row m-0">
+              <div
+                className={
+                  "card col-sm-4 col-md-3 col-lg-3 col-xl-3 p-0 innercardorders"
+                }
+                onClick={() => {
+                  if (filtri.username === "asc") {
+                    setFiltri({
+                      username: "desc",
+                    });
+                  } else {
+                    setFiltri({
+                      username: "asc",
+
+                    });
+                  }
+                }}
+              >
+                <div
+                  className="card-body p-1 row "
+                  style={{ maxHeight: "50vh" }}
+                >
+                  <p className="card-title col-12 ">
+                    <b>Username</b>
+
+                    {filtri.username === "asc" && (
+                      <i
+                        style={{
+                          color: darkMode
+                            ? "rgba(0,0,0,0.5)"
+                            : "rgba(255,255,255,0.5)",
+                        }}
+                        className="bi bi-arrow-up-short"
+                      ></i>
+                    )}
+                    {filtri.username === "desc" && (
+                      <i
+                        style={{
+                          color: darkMode
+                            ? "rgba(0,0,0,0.5)"
+                            : "rgba(255,255,255,0.5)",
+                        }}
+                        className="bi bi-arrow-down-short"
+                      ></i>
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+          }
+        </div>
+      }
+      {/*modal */}
+      {/*<DialogOrderDetail ordine={torre}></DialogOrderDetail>*/}
+    </div>
+  );
+}
+
+export default FiltriUte;
