@@ -16,17 +16,21 @@ import { ScrollProvider } from './tema/ScrollContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ErrorBoundary>
     <Provider store={store}>
     <PersistGate loading={null} persistor={persistedStore}>
       <DarkModeProvider>
+      <MsgProvider>
       <ScrollProvider>
-        <BrowserRouter basename="/magazzino-front">
+        <BrowserRouter /*basename="/magazzino-front"*/>
           <App />
         </BrowserRouter>
       </ScrollProvider>
+      </MsgProvider>
       </DarkModeProvider>
     </PersistGate>
   </Provider>
+  </ErrorBoundary>
   </React.StrictMode>
 );
 
