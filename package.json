@@ -1,6 +1,7 @@
 {
   "name": "magazzino",
   "version": "0.1.0",
+  "homepage": "https://3-ccc.github.io/frontend-tressuee",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
