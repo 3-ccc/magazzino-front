@@ -176,8 +176,7 @@ const prova=[
       <div className={(overon ? 'overlay active' : '')} style={{top: '-130px'}}></div>
         <div className="d-flex flex-wrap m-2" style={{ alignContent:'center', justifyContent:'center'}}>
 
-<button className={"btn btn-outline-success mb-2 " + (darkMode ? 'nav2button' : "nav2buttonl")} onClick={downloadPDFWithjsPDF}>scarica</button>
-
+<button className={"btn btn-outline-success mb-2 " + (darkMode ? 'nav2button' : "nav2buttonl")} onClick={downloadPDFWithjsPDF}><i className="bi bi-download"></i>{' scarica'}</button>
 
         {/*<table className="table table-striped table-dark">
 
@@ -220,13 +219,13 @@ const prova=[
 {/*</table>*/}{/*}
 </table>*/}
 
-<p style={{width: '100%'}}>
+{/*<p style={{width: '100%'}}>
 totali?
 <br></br>
 quando cambia sottocat oppure in line?
 <br></br>
 display none foglio vuoto
-</p>
+</p>*/}
 <table className={"table table-striped table-strip-custom table-hover "+(darkMode ? 'table-light' : 'table-dark' )} 
 style={{ maxWidth: (overon ? '478px' : '')}} id="styledTable">
 

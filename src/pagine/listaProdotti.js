@@ -263,6 +263,12 @@ console.log(darkMode)
         </div>
       )}
       <div style={{marginLeft:'2em', marginRight:'2em', marginTop: error=='' ? '2em' : ''}}>
+      
+        <div style={{display:"flex", justifyContent:'end'}}>
+          <button style={{ alignSelf:'end'}} className={"btn btn-outline-success m-0 p-2 " + (!darkMode ? "nav2buttonl" : "nav2button")}
+          onClick={()=>{navigate("/tab");}}><small><i class="bi bi-printer-fill"></i>{' riepilogo'}</small></button>
+        </div>
+
       <FiltriProd filtri={filtri} setFiltri={setFiltri} ></FiltriProd>
 
       {pagin && 

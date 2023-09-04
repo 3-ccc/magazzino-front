@@ -39,12 +39,12 @@ function DropdownButton({
   </button>
   {/*con nche altro/?*/}
   <ul className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" style={{top:'90%'}}>
-    <li><a className="dropdown-item" href={goToPage+"/nomi"}>Nomi</a></li>
-    <li><a className="dropdown-item" href={goToPage+"/materiali"}>Materiali</a></li>
-    <li><a className="dropdown-item" href={goToPage+"/misure"}>Misure</a></li>
-    <li><a className="dropdown-item" href={goToPage+"/colori"}>Colori</a></li>
-    <li><a className="dropdown-item" href={goToPage+"/categorie"}>Categorie</a></li>
-    <li><a className="dropdown-item" href={goToPage+"/immagini"}>Carica immagini</a></li>
+    <li><a className="dropdown-item" onClick={()=>{navigate(goToPage+"/nomi")}} >Nomi</a></li>
+    <li><a className="dropdown-item" onClick={()=>{navigate(goToPage+"/materiali")}}>Materiali</a></li>
+    <li><a className="dropdown-item" onClick={()=>{navigate(goToPage+"/misure")}}>Misure</a></li>
+    <li><a className="dropdown-item" onClick={()=>{navigate(goToPage+"/colori")}}>Colori</a></li>
+    <li><a className="dropdown-item" onClick={()=>{navigate(goToPage+"/categorie")}}>Categorie</a></li>
+    <li><a className="dropdown-item" onClick={()=>{navigate(goToPage+"/immagini")}}>Carica immagini</a></li>
 
     {/*<li><a className="dropdown-item" href={goToPage+"/sottocategorie"}>Sottocategorie</a></li>*/}
   </ul>
