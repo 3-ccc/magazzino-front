@@ -358,6 +358,9 @@ fa vedere ultimo/primo poi lo toglie
               <div className="col-8">nome</div>
               <div className="col-4"></div>
             </div>
+
+            {nuovo && <CardElement elem={{nome:''}} key={-1} i={-1} resetn={setNuovo} funz={add}></CardElement>}
+
             {elements.length && elements.length > 0 &&
               elements.map((prod, i) => {
 
@@ -365,7 +368,6 @@ fa vedere ultimo/primo poi lo toglie
                   <CardElement elem={prod} key={prod.nome} funz={mod}></CardElement>
                 );
               })}
-                  {nuovo && <CardElement elem={{nome:''}} key={-1} i={-1} resetn={setNuovo} funz={add}></CardElement>}
 
           </div>
         </div>

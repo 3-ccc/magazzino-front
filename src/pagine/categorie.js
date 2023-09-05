@@ -475,6 +475,10 @@ se sottocat non ha cat si rompe
               <div className="col-8">nome</div>
               <div className="col-4"></div>
             </div>
+
+            {nuovacat && !nuovasot && <CardElement elem={{nome:''}} key={-1} i={-1} resetn={setNuovacat} funz={addcat} testo={'categoria'}></CardElement>}
+            {nuovasot && !nuovacat && <CardElement elem={{nome:''}} key={-1} i={-1} resetn={setNuovasot} funz={addsott} testo={'sottocategoria'}></CardElement>}
+
             {elements.length && elements.length > 0 &&
               elements.map((prod, i) => {
                 //console.log(i)
@@ -498,8 +502,7 @@ se sottocat non ha cat si rompe
                     ret
                 );
               })}
-                  {nuovacat && !nuovasot && <CardElement elem={{nome:''}} key={-1} i={-1} resetn={setNuovacat} funz={addcat} testo={'categoria'}></CardElement>}
-                  {nuovasot && !nuovacat && <CardElement elem={{nome:''}} key={-1} i={-1} resetn={setNuovasot} funz={addsott} testo={'sottocategoria'}></CardElement>}
+
           </div>
         </div>
       )}
