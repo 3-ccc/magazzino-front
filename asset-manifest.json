@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/magazzino-front/static/css/main.2f72d568.css",
-    "main.js": "/magazzino-front/static/js/main.9415109f.js",
+    "main.js": "/magazzino-front/static/js/main.72906303.js",
     "static/js/498.ee56e067.chunk.js": "/magazzino-front/static/js/498.ee56e067.chunk.js",
     "static/js/703.3356c670.chunk.js": "/magazzino-front/static/js/703.3356c670.chunk.js",
     "static/js/598.367596c7.chunk.js": "/magazzino-front/static/js/598.367596c7.chunk.js",
@@ -13,14 +13,12 @@
     "static/media/silver.png": "/magazzino-front/static/media/silver.1e51d4cff72c9546695e.png",
     "static/media/bootstrap-icons.woff?": "/magazzino-front/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
     "static/media/bootstrap-icons.woff2?": "/magazzino-front/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
-    "static/media/dotre.png": "/magazzino-front/static/media/dotre.da57266bd6a810f62f60.png",
     "static/media/dotted.png": "/magazzino-front/static/media/dotted.96df60958abe9e45b04c.png",
-    "static/media/prova.png": "/magazzino-front/static/media/prova.ca78d6198834598b374d.png",
     "static/media/noimageavailable.png": "/magazzino-front/static/media/noimageavailable.aadc02855ce9056e992b.png",
     "static/media/logo.png": "/magazzino-front/static/media/logo.2c1aa5b79d6c59163193.png",
     "index.html": "/magazzino-front/index.html",
     "main.2f72d568.css.map": "/magazzino-front/static/css/main.2f72d568.css.map",
-    "main.9415109f.js.map": "/magazzino-front/static/js/main.9415109f.js.map",
+    "main.72906303.js.map": "/magazzino-front/static/js/main.72906303.js.map",
     "498.ee56e067.chunk.js.map": "/magazzino-front/static/js/498.ee56e067.chunk.js.map",
     "703.3356c670.chunk.js.map": "/magazzino-front/static/js/703.3356c670.chunk.js.map",
     "598.367596c7.chunk.js.map": "/magazzino-front/static/js/598.367596c7.chunk.js.map",
@@ -28,6 +26,6 @@
   },
   "entrypoints": [
     "static/css/main.2f72d568.css",
-    "static/js/main.9415109f.js"
+    "static/js/main.72906303.js"
   ]
 }
