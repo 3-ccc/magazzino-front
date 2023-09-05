@@ -196,7 +196,12 @@ function RouterHandler({ setSelezionato }) {
           }
         />
       </Route>
-      <Route path="/tab" element={<ReportTot />} />
+      <Route path="/tab" 
+      element={
+        <ProtectedRoute>
+            <ReportTot />
+        </ProtectedRoute> 
+      } />
 
       {/*<Route
         path="/account"
