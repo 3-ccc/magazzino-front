@@ -65,7 +65,7 @@ useEffect(() => {
   return (
       <div
           className={
-            " p-2 row m-1 " +(testo==='sottocategoria' ? "sfondo2" : (darkMode ? "sfondo3" : "sfondo1"))
+            " p-1 row m-1 " +(testo==='sottocategoria' ? "sfondo2" : (darkMode ? "sfondo3" : "sfondo1"))
           }
           style={{
             //color: darkMode ? "testodark" : "testolight",
