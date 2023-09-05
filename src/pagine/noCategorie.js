@@ -150,7 +150,7 @@ function NoCategorie({ type }) {
       //reimpostare cose in agina??? ->fa altra chiamata o.o
       //no cambiare solo il totale...
     
-      }, [filtri/*, pagin*/, numpag, numperpag/*, operazioni*/, aggiorna]);/////mh
+      }, [filtri/*, pagin*/, numpag, numperpag/*, operazioni*/, aggiorna, type]);/////mh
 
 
   /*function addToCart() {
