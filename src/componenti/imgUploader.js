@@ -94,7 +94,7 @@ sendImage(srcimg, folder, filename.trimEnd().trimStart()
             {/*<i className="bi bi-radioactive"></i>*/}
             <div className={(darkMode ? ' sfondocard1' : 'sfondocard2')} >
             <i className="bi bi-lightbulb" style={{color: !darkMode ? 'lightblue' : 'cornflowerblue'}}></i>
-            {' '}Nomina l'immagine come {!folder ? ' la caratteristca ' : (folder=='colori' ? ' il colore ' : (folder=='materiali' ? ' il materiale ' : (folder=='nomi' ? ' il nome ' : ' la categoria' ) ) )} a cui la vuoi associare{' '}
+            {' '}Nomina l'immagine come {!folder ? ' la caratteristica ' : (folder=='colori' ? ' il colore ' : (folder=='materiali' ? ' il materiale ' : (folder=='nomi' ? ' il nome ' : ' la categoria' ) ) )} a cui la vuoi associare{' '}
             <i className="bi bi-lightbulb" style={{color: !darkMode ? 'lightblue' : 'cornflowerblue'}}></i>
 
             </div>
