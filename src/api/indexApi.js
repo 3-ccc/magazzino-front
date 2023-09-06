@@ -25,21 +25,21 @@ function retrieveErrors(statusCode, data) {
       //Bad Request
       isError = true;
       messageError =
-        "Errore della piattaforma.\nNello specifico, è stata inviata una richiesta non valida.\nRiprova";
+        "Richiesta non valida.";
       break;
 
     case 401:
       //Unauthorized Access
       isError = true;
-      messageError = "Username o Password errati, o l'utente non è autorizzato all'accesso.\nRiprova";
+      messageError = "Username o Password errati, o l'utente non è autorizzato all'accesso.";
       emptyStore();
       break;
 
     case 403:
-      //user not authorizated (or not found)
+      //forbidden
       isError = true;
       messageError =
-        "Azione non consentita.\nRiprova";
+        "Azione non consentita.";
       break;
 
     case 404:
@@ -48,10 +48,15 @@ function retrieveErrors(statusCode, data) {
         "Gli elementi ricercati non sono stati trovati.\nRiprova!";
       break;
 
-      case 418:
+      case 418: //teapot
         isError = true;
-        messageError = "Azione non eseguita o non andata a buon fine.\nRiprova!";
+        messageError = "Azione non eseguita o non andata a buon fine.";
         break;
+
+      case 423: //locked
+      isError = true;
+      messageError = "Utente non modificabile";
+      break;
 
     case 500:
       isError = true;
