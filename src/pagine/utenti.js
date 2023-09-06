@@ -87,8 +87,8 @@ function Utenti({ type }) {
       setFiltri({
         username: null,
       });
-      setPagtot([1])
-      setNumpag(1)
+      setPagtot([])
+      setNumpag(0)
       setNumperpag(5)
       setAgg(false)
     }else{
@@ -108,7 +108,7 @@ function Utenti({ type }) {
           filtro:filtri,
           pagina:{
               numpag:numpag,
-              perpag:1
+              perpag:numperpag
           },
           pagin:pagin
       }

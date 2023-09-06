@@ -352,10 +352,11 @@ console.log(e)
             {pagin && 
 
 <div className="row mb-2" style={{}}>
+  {/*
 fickera in quelli cima fondo--
 solo se piccolo pero!
 fa vedere ultimo/primo poi lo toglie
-
+            */}
 <TendinaPerPag num={numperpag} setNum={setNumperpag}></TendinaPerPag>
 
 {pagtot.length>0 && pagin && <nav style={{maxHeight:'38px', overflow:'hidden'}} aria-label="Page navigation example" className={"col-10 m-0"} >
@@ -385,7 +386,7 @@ postpag pag.lenght
     </li>
 
     
-    {pagtot.length && pagtot.lenght>0 && pagtot.map((npag)=>{
+    {pagtot.length && pagtot.length>0 && pagtot.map((npag)=>{
         return(
             <PaginationNum i={npag} selez={numpag} tot={pagtot.length} setselez={setNumpag} key={npag}></PaginationNum>
         )

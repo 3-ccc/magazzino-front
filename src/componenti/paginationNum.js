@@ -73,7 +73,6 @@ useEffect(() => {
 //manca ualcaosa x quellinel mezzo...
 //  4-8
 
-
 //ricorda almeno una deve esserci! la selected
 
     if(selez+Math.round(w/2)-1>tot){

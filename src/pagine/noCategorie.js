@@ -44,6 +44,7 @@ function NoCategorie({ type }) {
   },[])
 
   useEffect(() => {
+
     const p={
       filtro:filtri,
       pagina:{
@@ -69,6 +70,39 @@ function NoCategorie({ type }) {
       }
     });
   }, []);//iniziale diverso?!?!?!?!??!?!
+
+  useEffect(() => {
+    setPagin(false)
+    setNuovo(false)
+
+    const p={     //tanto è fisso -- probabilm aggiorna cmq dopo
+      filtro:{
+        nome: null,
+      },
+      pagina:{
+          numpag:0,
+          perpag:5
+      },
+      pagin:false
+  }
+
+    getElementsfsp(p, type).then((element) => {
+      if (!element.isError) {
+        //se pagina sbagliata vedi []
+        //console.log(element.data)//pagtot 0
+        setElements(element.data.elem);
+        const pt=[]
+        for (let index = 1; index <= element.data.paginetot; index++) {
+          pt.push(index)
+        }
+        //console.log(pt)
+        setPagtot(pt)
+        //console.log(element)
+      } else {
+        console.error("errore durante il recupero de "+type);
+      }
+    });
+  }, [type]);//iniziale diverso?!?!?!?!??!?!
 
   useEffect(() => {
     if(pagin == false){//se no paginaz -> resetta tutto
@@ -150,7 +184,7 @@ function NoCategorie({ type }) {
       //reimpostare cose in agina??? ->fa altra chiamata o.o
       //no cambiare solo il totale...
     
-      }, [filtri/*, pagin*/, numpag, numperpag/*, operazioni*/, aggiorna, type]);/////mh
+      }, [filtri/*, pagin*/, numpag, numperpag/*, operazioni*/, aggiorna]);/////mh
 
 
   /*function addToCart() {
@@ -286,10 +320,11 @@ function NoCategorie({ type }) {
         {pagin && 
 
 <div className="row mb-2" style={{marginLeft:'0.5em', marginRight:'0.5em'}}>
+  {/*
 fickera in quelli cima fondo--
 solo se piccolo pero!
 fa vedere ultimo/primo poi lo toglie
-
+        */}
 <TendinaPerPag num={numperpag} setNum={setNumperpag}></TendinaPerPag>
 
 {pagtot.length>0 && pagin && <nav style={{maxHeight:'38px', overflow:'hidden'}} aria-label="Page navigation example" className={"col-10 m-0"} >
