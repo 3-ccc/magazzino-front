@@ -94,7 +94,7 @@ function CardOperazione({ ope, indice, noresize }) {
               w={noresize ? 1 :wi}
               i={indice}
               title={"Data"}
-              description={ope.data ? new Date(ope.data).toLocaleDateString("it-IT")/*.split("T")[0]*/ : '-'}
+              description={(ope && ope.data) ? new Date(ope.data).toLocaleDateString("it-IT")/*.split("T")[0]*/ : '-'}
               //controllare
             ></InnerCard>
           </div>

@@ -1004,31 +1004,6 @@ async function sendImage(immagine, cartella, nome) {
   }
 }
 
-//check img
-//---
-async function checkimg(imgurl) {
-  
-
-  //const imageUrl = 'https://example.com/images/image.jpg';
-  //https://drive.google.com/uc?export=view&id=1aJnJHtPAnVR7Ma7WIzAup_-t5uZazjam
-  imgurl='https://drive.google.com/uc?export=view&id=1aJnJHtPAnVR7Ma7WIzAup_-t5uZazjam'
-
-
-  fetch(imgurl, {'Access-Control-Allow-Origin':'*'})
-    .then(response => {
-      if (response.ok) {
-        console.log('valid');
-      } else {
-        console.log('not');
-      }
-    })
-    .catch(error => {
-  
-      console.error('Error validating image URL:', error);
-  
-    });
-  }
-
   async function getListTable() {
     try {
       const response = await axios.get("/prodotti/report",
@@ -1092,6 +1067,5 @@ export {
   createSubcat,
   getTendine,
   sendImage,
-  checkimg,
   getListTable,
 };

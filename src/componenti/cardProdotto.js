@@ -3,7 +3,6 @@ import { DarkModeContext } from "../tema/DarkModeContext";
 import { useContext, useEffect, useState } from "react";
 import './componenti.css'
 import prova from '../img/dotted.png'
-import { checkimg } from "../api/indexApi";
 //quelle con scritta si vede scritta...
 //quasi tutte rompono --> centro
 //in realta no--> è xke riprende stessa immagine per lo sfondo categoria
@@ -198,8 +197,6 @@ const hextorgb=(hexcolor)=>{
   console.log(content)
 */
 //console.log(singleProduct)
-
-//checkimg('https://drive.google.com/uc?export=view&id='+(singleProduct.materiale ? singleProduct.materiale.img : singleProduct.materiale))
 
 //img ok funziona altri 2
 //background no---
