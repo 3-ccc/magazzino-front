@@ -1,10 +1,10 @@
 import { DarkModeContext } from "../tema/DarkModeContext";
 import { useContext, useEffect, useState } from "react";
-import CardMiniProdotto from "../componenti/cardMiniProdotto";
+//import CardMiniProdotto from "../componenti/cardMiniProdotto";
 import { useNavigate } from "react-router-dom";
-import { useWindowDimensions } from "../altro/windowDimensions.js";
+//import { useWindowDimensions } from "../altro/windowDimensions.js";
 import { sendImage } from "../api/indexApi";
-import logo from '../img/logo.png'
+//import logo from '../img/logo.png'
 
 const TestPage = () => {
   const { darkMode } = useContext(DarkModeContext);

@@ -4,7 +4,7 @@ import { HomePage } from "../pagine/homePage";
 import { ListaProdotti } from "../pagine/listaProdotti";
 import { ListaSCarico } from "../pagine/listaSCarico";
 import { SCarico } from "../pagine/carico";
-import { Scarico } from "../pagine/scarico";
+//import { Scarico } from "../pagine/scarico";
 import { ProductNewModPage } from '../pagine/dettaglioProdottov2'
 //import { TowersMap } from "../pagine/towersMap";
 //import { About } from "../pagine/about";
@@ -21,10 +21,10 @@ import { Account } from "../pagine/account";
 import { Utenti } from "../pagine/utenti";
 import { Login } from "../pagine/login";
 import { Operazioni } from "../pagine/operazioni";
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 //import { OrdersPage } from "../pagine/ordersPage";
 import { ImgUploader } from "../componenti/imgUploader";
-import { TestPage } from "../pagine/testPage";
+//import { TestPage } from "../pagine/testPage";
 import { ReportTot } from "../pagine/reportTot";
 
 function RouterHandler({ setSelezionato }) {

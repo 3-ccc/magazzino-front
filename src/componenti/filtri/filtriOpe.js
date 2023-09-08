@@ -223,7 +223,7 @@ filtri
                       ...filtri,
                       fidata: el.target.value,
                     });
-                    console.log(filtri.fidata)
+                    //console.log(filtri.fidata)
                   }}></input>
                   </p>
                   <p className="card-title col-6 my-auto">
