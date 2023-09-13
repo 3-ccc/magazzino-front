@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 import { useWindowDimensions } from "../altro/windowDimensions.js";
 import CardOperazione from "../componenti/cardOperazione";
 import { PaginationNum } from "../componenti/paginationNum";
-import { filterArray, sortArray } from "../altro/filtriOrdinam";
+//import { filterArray, sortArray } from "../altro/filtriOrdinam";
 import FiltriOpe from "../componenti/filtri/filtriOpe";
 import { PaginSiNo } from "../componenti/paginSiNo";
 import { TendinaPerPag } from "../componenti/tendinaPerPag";

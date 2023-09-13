@@ -101,8 +101,6 @@ function Utenti({ type }) {
   }, [pagin]);
 
   useEffect(() => {
-
-    //diventano chiamate
     
         const p={
           filtro:filtri,
@@ -112,7 +110,6 @@ function Utenti({ type }) {
           },
           pagin:pagin
       }
-      //console.log(p)
       getUsersfsp(p).then((element) => {
         if (!element.isError) {
           //se pagina sbagliata vedi []
@@ -126,9 +123,7 @@ function Utenti({ type }) {
           for (let index = 1; index <= element.data.paginetot; index++) {
             pt.push(index)
           }
-          //console.log(pt)
           setPagtot(pt)
-          //console.log(element)
         } else {
           console.error("errore durante il recupero degli utenti");
         }
@@ -160,8 +155,6 @@ function Utenti({ type }) {
       setSaveEnabled(false);
     }*/
   }, [selected]);
-
-  //console.log(darkMode);
 
   return (
     <div style={{marginTop:'2em', marginBottom:'2em'}}>

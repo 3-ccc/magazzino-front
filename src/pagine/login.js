@@ -68,26 +68,7 @@ function Login() {
             />
           </div>
           <LoginCard></LoginCard>
-
-          {/*pageOpened === "login" && (
-            <LoginCardFooter
-              linkMessage={"Registrati"}
-              message={"Non seri ancora registrato? "}
-              clickedRedirect={() => {
-                setPageOpened("registrati");
-              }}
-            ></LoginCardFooter>
-            )*/}
-
-          {/*pageOpened === "registrati" && (
-            <LoginCardFooter
-              linkMessage={"Torna al Login"}
-              message={"Sei già Iscritto? "}
-              clickedRedirect={() => {
-                setPageOpened("login");
-              }}
-            ></LoginCardFooter>
-            )*/}
+          
         </div>
       </div>
     </div>

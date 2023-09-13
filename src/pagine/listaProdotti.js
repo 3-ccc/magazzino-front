@@ -266,7 +266,10 @@ console.log(darkMode)
       
         <div style={{display:"flex", justifyContent:'end'}}>
           <button style={{ alignSelf:'end'}} className={"btn btn-outline-success m-0 p-2 " + (!darkMode ? "nav2buttonl" : "nav2button")}
-          onClick={()=>{navigate("/tab");}}><small><i class="bi bi-printer-fill"></i>{' riepilogo'}</small></button>
+          onClick={()=>{navigate("/tab");}}><small><i className="bi bi-printer-fill"></i>{' riepilogo'}</small></button>
+
+<button style={{ alignSelf:'end'}} className={"btn btn-outline-success m-0 p-2 " + (!darkMode ? "nav2buttonl" : "nav2button")}
+          onClick={()=>{navigate("/graf");}}><small><i className="bi bi-bar-chart-fill"></i>{' grafici'}</small></button>
         </div>
 
       <FiltriProd filtri={filtri} setFiltri={setFiltri} ></FiltriProd>

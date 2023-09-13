@@ -2,9 +2,6 @@ import { SomethingWentWrong } from "../pagine/somethingWentWrong";
 import React, { useContext } from "react";
 import { MsgContext } from '../tema/MsgContext'
 
-
-
-
 class ErrorBoundary extends React.Component {
     state = {
       hasError: false,

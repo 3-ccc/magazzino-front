@@ -1,17 +1,11 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { HomePage } from "../pagine/homePage";
-//import { ContactForm } from "../pagine/ContactForm";
 import { ListaProdotti } from "../pagine/listaProdotti";
 import { ListaSCarico } from "../pagine/listaSCarico";
 import { SCarico } from "../pagine/carico";
 //import { Scarico } from "../pagine/scarico";
 import { ProductNewModPage } from '../pagine/dettaglioProdottov2'
-//import { TowersMap } from "../pagine/towersMap";
-//import { About } from "../pagine/about";
-//import { CartPage } from "../pagine/cartPage";
-//import { LoginPage } from "../pagine/loginPage";
 import { Error404 } from "../pagine/error404";
-//import { AccountPage } from "../pagine/accountPage";
 //import { TestingPage } from "../pagine/testingPage";
 import { ProtectedRoute } from "./protectedRoute";
 import { Altro } from "../pagine/altro";
@@ -24,8 +18,9 @@ import { Operazioni } from "../pagine/operazioni";
 //import { useEffect, useState } from "react";
 //import { OrdersPage } from "../pagine/ordersPage";
 import { ImgUploader } from "../componenti/imgUploader";
-//import { TestPage } from "../pagine/testPage";
+import { TestPage } from "../pagine/testPage";
 import { ReportTot } from "../pagine/reportTot";
+import { Grafici } from "../pagine/grafici";
 
 function RouterHandler({ setSelezionato }) {
   //aggiungere qui anche i messaggi   -> 1 per tutti
@@ -68,7 +63,6 @@ function RouterHandler({ setSelezionato }) {
         </ProtectedRoute>
       } />
       
-      {/** andranno annidate in lista..? */}
       <Route path="/carico" element={
         <ProtectedRoute>
           <SCarico mode={'carico'} />
@@ -133,13 +127,10 @@ function RouterHandler({ setSelezionato }) {
 
       <Route path="/login" element={<Login />} />
 
-      {/*<Route path="/utenti" element={<CartPage />} />*/}
 
       <Route path="/*" element={<Error404 />} />
 
       <Route path="magazzino">
-            {/*<ProtectedRoute ruoli={["ufficio", "admin", "magazzino"]}>*/}
-            {/*</ProtectedRoute>*/}
 
         <Route
           path="new"
@@ -150,9 +141,7 @@ function RouterHandler({ setSelezionato }) {
           
           }
         />
-        {/*<ProtectedRoute ruoli={["ufficio", "admin", "magazzino"]}>
-        <ProductNewModPage mod={"detail"} />
-            </ProtectedRoute>*/}
+
         <Route
           path="dettagli/:id"
           element={
@@ -164,9 +153,7 @@ function RouterHandler({ setSelezionato }) {
       </Route>
 
       <Route path="account">
-            {/*<ProtectedRoute ruoli={["ufficio", "admin", "magazzino"]}>*/}
-            {/*</ProtectedRoute>*/}
-            
+
         <Route
           path=""
           element={
@@ -184,9 +171,6 @@ function RouterHandler({ setSelezionato }) {
           </ProtectedRoute>
           }
         />
-        {/*<ProtectedRoute ruoli={["ufficio", "admin", "magazzino"]}>
-        <ProductNewModPage mod={"detail"} />
-            </ProtectedRoute>*/}
         <Route
           path="dettagli/:id"
           element={
@@ -202,7 +186,12 @@ function RouterHandler({ setSelezionato }) {
             <ReportTot />
         </ProtectedRoute> 
       } />
-
+      <Route path="/graf" 
+      element={
+        <ProtectedRoute>
+            <Grafici />
+        </ProtectedRoute> 
+      } />
       {/*<Route
         path="/account"
         element={
@@ -210,17 +199,8 @@ function RouterHandler({ setSelezionato }) {
             <AccountPage />
           </ProtectedRoute>
         }
-      />
-
-      <Route
-        path="/orders"
-        element={
-          <ProtectedRoute>
-            <OrdersPage />
-          </ProtectedRoute>
-        }
       />*/}
-      {/*<Route path="/testing" element={<TestPage />} />*/}
+      {<Route path="/testing" element={<TestPage />} />}
 
       {/*testingppage */}
     </Routes>

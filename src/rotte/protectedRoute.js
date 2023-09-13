@@ -46,8 +46,6 @@ function ProtectedRoute({ children }) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
-  //console.log(children);
-
   return children;
 }
 

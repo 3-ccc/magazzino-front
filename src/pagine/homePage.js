@@ -1,7 +1,5 @@
 import { DarkModeContext } from "../tema/DarkModeContext";
 import { useContext, useEffect, useState } from "react";
-//import { retrieveAllProducts } from "../api/indexApi";
-import CardMiniProdotto from "../componenti/cardMiniProdotto";
 import { useNavigate } from "react-router-dom";
 import { useWindowDimensions } from "../altro/windowDimensions.js";
 import logo from '../img/logo.png'
@@ -38,14 +36,8 @@ const HomePage = () => {
             style={{ width: "30%" }}
         />
         </div>
-
-           
            <h2><b>Benvenuto :D</b></h2>
         </div>
-
-
-
-
     </div>
   );
 };

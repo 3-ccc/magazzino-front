@@ -86,7 +86,7 @@ function retrieveErrors(statusCode, data) {
  * _______________________________________________ *
  */
 
-function requireTokenAuth() {     //giusto?
+function requireTokenAuth() {
   const access =
     "Bearer " + store.getState(tokenStore).tokenStore.token;
   return access;
@@ -165,10 +165,7 @@ async function getSingleUser(idUser) {
 //create
 //modify    put 
 async function modifyUser(user) {
-  //console.log(user)
-
   try {
-    //console.log(user);
     const response = await axios.put(
       //non funziona e non va bene!!!
       "/users/id/" + user.id,
@@ -194,7 +191,6 @@ async function modifyUser(user) {
 //modify super
 async function modifyUserSuper(user) {
   try {
-    //console.log(user);
     const response = await axios.put(
       //non funziona e non va bene!!!
       "/users/idsuper/" + user.idsuper,//di supepr
@@ -279,7 +275,6 @@ async function getProductsfsp(fsp) {
     {
       headers: { Authorization: requireTokenAuth() },
     });
-//console.log(response)
     return retrieveErrors(response.status, response.data);
   } catch (e) {
 //console.log(e)
@@ -298,7 +293,6 @@ async function getSingleProduct(id) {
       headers: { Authorization: requireTokenAuth() },
     });
 
-    //console.log({ response });
     return retrieveErrors(response.status, response.data);
   } catch (e) {
     return retrieveErrors(e.status, e.data);
@@ -311,8 +305,6 @@ async function getProductpop(id) {
     {
       headers: { Authorization: requireTokenAuth() },
     });
-
-    //console.log({ response });
     return retrieveErrors(response.status, response.data);
   } catch (e) {
     return retrieveErrors(e.status, e.data);
@@ -332,7 +324,6 @@ async function getProductpop(id) {
 }*/
 
 async function createProduct(product) {
-  //console.log({ product });
   try {
     const response = await axios.post(
       "/prodotti",
@@ -421,7 +412,6 @@ async function getElementsfsp(fsp, tipo) {
 }
 
 async function createElement(m, tipo) {
-  //console.log({ product });
   try {
     const response = await axios.post(
       "/"+tipo,
@@ -1018,6 +1008,38 @@ async function sendImage(immagine, cartella, nome) {
     }
   }
 
+  async function getLine(nome) {
+    try {
+      //users
+      const response = await axios.put("/operazioni/grafico", {
+        nome
+      },
+      {
+        headers: { Authorization: requireTokenAuth() },
+      });
+  
+      return retrieveErrors(response.status, response.data);
+    } catch (e) {
+      console.log(e)
+      return retrieveErrors(e.status, e.data);
+    }
+  }
+
+  async function getDonut() {
+    try {
+      //users
+      const response = await axios.get("/operazioni/graficotorta",
+      {
+        headers: { Authorization: requireTokenAuth() },
+      });
+  
+      return retrieveErrors(response.status, response.data);
+    } catch (e) {
+      console.log(e)
+      return retrieveErrors(e.status, e.data);
+    }
+  }
+
 export {
   postLogin,
   getUsers,
@@ -1068,4 +1090,6 @@ export {
   getTendine,
   sendImage,
   getListTable,
+  getLine,
+  getDonut,
 };

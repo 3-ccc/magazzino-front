@@ -40,7 +40,6 @@ function sortArray(arrayToBeSorted, filtri, field, realValueName) {
       } else return false;
     });
   
-    //console.log({ filtering });
     return filtering;
   }
   

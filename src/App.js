@@ -58,6 +58,7 @@ console.log(document.getElementById('navsopra').offsetHeight)
     setNavs(document.getElementById('navsopra').offsetHeight)
   }, []);
 
+  
   return (
     <div
       className={

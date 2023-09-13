@@ -3,11 +3,68 @@ import { DropdownButton } from "./dropdownButtonDown";
 import { useSelector } from "react-redux";
 //import { SearchBar } from "../components/searchBar";
 import "./navstile.css";
-
+import { useEffect } from "react";
 
 function NavSotto({ selezionato, setSelezionato }) {
   const access = useSelector((state) => state.tokenStore.token);
+
+  function resfrompath(path) {
+    let resu
+
+    switch (path) {
+      case 'home':
+        resu='Home'
+        break;
+      case 'magazzino':
+        resu='Magazzino'
+        break;
   
+      case 'listacarico':
+        resu ="Carico";
+        break;
+  
+      case 'listascarico':
+        resu = "Scarico";
+        break;
+  
+      case 'altro':
+        resu = "Altro";
+        break;
+  
+      case 'operazioni':
+        resu = "Operazioni";
+        break;
+  
+      /*default://??home???
+        resu = 'Home';
+        break;
+        */
+    }
+  
+    return resu;
+  }
+
+
+  useEffect(()=>{
+
+    try {//per sicurezza
+      
+      //controlla url anche se refresh colora---
+  /*console.log(window.location)*/
+  //console.log(selezionato)//refresh ecc home
+  
+  //path name dividi / (primo magazzino-front)
+    const sel=window.location.pathname.substring(1).split('/')[1]
+    //console.log(sel)
+    if(selezionato=='home'){
+      console.log(resfrompath(sel))
+      setSelezionato(resfrompath(sel))
+    }
+    } catch (error) {
+      
+    }
+  },[])
+
   return (
     <div>
     {access && <nav className="navbar navbar-expand-lg navbar-light navbar-lightgreen">

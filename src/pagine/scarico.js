@@ -15,6 +15,12 @@ const Scarico = ({ mode }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
+/*
+
+in teoria
+non usato!
+
+*/
   useEffect(() => {
     console.log(location)
     /*retrieveAllProducts().then((element) => {

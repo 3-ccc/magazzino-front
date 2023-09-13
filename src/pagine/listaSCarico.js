@@ -173,7 +173,6 @@ const ListaSCarico = ({ mode }) => {
   }
 
   function deleteItem(productToBeDeleted) {
-    //console.log(2);
     const tempArray = JSON.parse(JSON.stringify(products));
     //console.log({ tempArray });
     const index = tempArray
