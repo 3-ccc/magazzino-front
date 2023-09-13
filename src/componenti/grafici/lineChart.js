@@ -12,6 +12,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { getLine, getElementsfsp } from '../../api/indexApi';
+import { useWindowDimensions } from "../../altro/windowDimensions";
 
 ChartJS.register(
   CategoryScale,
@@ -30,6 +31,16 @@ const Linechart = ()=>{
   const [n, setN] = useState();
   const [tendine, setTendine] = useState();
   const [labels, setLabels] = useState();
+  const [w, setW] = useState(window.innerWidth<768 ? window.innerWidth/2-30 : window.innerWidth/4-30);
+  const { wi } = useWindowDimensions();
+//402*201 2:1
+
+useEffect(() => {
+  if(n){
+
+  setW(document.getElementById('divline').offsetWidth/2)
+  }
+      }, [wi]);
 
 /*
     useEffect(() => {
@@ -62,11 +73,11 @@ useEffect(() => {
     if(n){
 
     getLine(n).then((element) => {
-      console.log(element)
+      //console.log(element)
       if (!element.isError) {
         setMsg(element.data);//forse meglio separarli direttamente???
         setLabels(element.data.mesi)
-console.log(element.data)
+//console.log(element.data)
 /*
         setError("");
 */
@@ -171,8 +182,10 @@ console.log(element)
                         </select>
                         </div>
                       </div>
-                      {n && <div className='sfondocard1'>
-          {n && <Line options={options} data={data} />}
+                      {n && <div style={{'width': '100%', display:'flex', justifyContent:'center'}}>
+                      <div className='col-12 col-md-6 sfondocard1' id='divline' style={{justifyContent:'center', position:'relative',height:w}}>
+                        {n && <Line options={options} data={data} />}
+                      </div>
                       </div>}
         </div>
 

@@ -57,7 +57,7 @@ function NavSotto({ selezionato, setSelezionato }) {
     const sel=window.location.pathname.substring(1).split('/')[1]
     //console.log(sel)
     if(selezionato=='home'){
-      console.log(resfrompath(sel))
+      //console.log(resfrompath(sel))
       setSelezionato(resfrompath(sel))
     }
     } catch (error) {
