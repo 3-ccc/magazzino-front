@@ -29,19 +29,116 @@ const Linechart = ()=>{
   const [msg, setMsg] = useState([]);
   //const [refresh, setRefresh] = useState(0);
   const [n, setN] = useState();
+  const [regra, setRegra] = useState('false');
+  const [see, setSee] = useState(true);
+
   const [tendine, setTendine] = useState();
   const [labels, setLabels] = useState();
-  const [w, setW] = useState(window.innerWidth<768 ? window.innerWidth/2-30 : window.innerWidth/4-30);
+  const [w, setW] = useState(window.innerWidth<768 ? window.innerWidth/2 : window.innerWidth/4);
+  const [prew, setPrew] = useState();
+  const [trackw, setTrackw] = useState();
+
+  
   const { wi } = useWindowDimensions();
 //402*201 2:1
 
 useEffect(() => {
-  if(n){
+  //setPrew(window.innerWidth)
 
+  if(n && see){//chiudendo ispeziona rimane piccino
+//console.log(wi)
+//console.log('---')
+//console.log(document.getElementById('divline').offsetWidth/2)
+   
+//graf 377 188  meta---
+//console.log(document.getElementById('divline').offsetWidth)
+
+  setTrackw({wi:wi, prew:prew})
+  setPrew(wi)//???  magari---
   setW(document.getElementById('divline').offsetWidth/2)
+/*
+  console.log(prew)//beh sono diversi--- magari è ok
+  console.log(wi)
+*/
   }
       }, [wi]);
 
+useEffect(() => {
+  /*
+  console.log(wi)
+  console.log(prew)
+  console.log(window.innerWidth)
+*/
+/*
+console.log(prew)//beh sono diversi qui no---
+console.log(wi)*/
+//console.log(trackw)//ottimo
+//se esist...     wi prew
+
+
+  if(n){
+    
+//tutto insieme
+//adesso - pre          >2?
+//ingrandire    posit
+//rimpicciolire     neg
+//if(trackw.wi && trackw.prew && trackw.wi-trackw.prew )   oppure hasown...?
+
+    //pagina non solo grafico     si bello ma non si riesce--> fare su grafico
+    //se negativo fare nulla
+    //altrimenti > di???50?       prova mandando videoss
+    if(trackw.wi && trackw.prew && (trackw.wi-trackw.prew>150)){//giusto per sicurezza
+      //xke se veloce c'è gap     secondo me ci sta ... se fai veloce non si nota tanto
+     /* 
+      console.log('---')
+
+      console.log(trackw)
+//      console.log(prew)
+      console.log('---')
+*/      
+      setSee(false)
+      //setSee(true)
+      const myTimeout = setTimeout(()=>{//se faccio clear non va...
+        setSee(true)
+        //console.log(refresh)
+      }, 0);//?
+    }
+
+
+      //set false
+  //set true  ? funziona?
+
+///clearTimeout(myTimeout)
+//console.log(myTimeout)
+
+    /*
+    console.log('set doc')
+    console.log(document.getElementById('lnchart').style.height)
+  document.getElementById('lnchart').style.height=''+1000+'px'
+    console.log(document.getElementById('lnchart').style.height)
+    document.getElementById('lnchart').style.width=''+1000+'px'
+*//*
+  let r = (Math.random() + 1).toString(36).substring(7);
+
+  if(r==regra){
+    r=r+'a'
+  }
+
+  //nada non va
+  //solo prima volta
+  //console.log(regra)
+  /*if(regra=='true'){
+    setRegra('false')
+  }else{
+    setRegra('true')
+  }*//*
+  if(regra){
+    setRegra()
+  }else{
+    setRegra(r)
+  }*/
+}
+      }, [w]);
 /*
     useEffect(() => {
       const didMount = async () => {
@@ -84,7 +181,7 @@ useEffect(() => {
       } else {
 //        setError("errore");
         //showmsg('rosso', 'attenzione', element.messageError)
-console.log(element)
+//console.log(element)
       }
     });
 }
@@ -151,7 +248,7 @@ console.log(element)
 
       return <div style={{'width': '100%'}}>
         {/*mettere valore default altrimenti grafico nada?*/}
-        <div className="form-group row mt-3">
+                      <div className="form-group row mt-3">
                         <label
                           htmlFor="titoloproduct"
                           className="col-md-3 col-form-label"
@@ -182,11 +279,11 @@ console.log(element)
                         </select>
                         </div>
                       </div>
-                      {n && <div style={{'width': '100%', display:'flex', justifyContent:'center'}}>
-                      <div className='col-12 col-md-6 sfondocard1' id='divline' style={{justifyContent:'center', position:'relative',height:w}}>
-                        {n && <Line options={options} data={data} />}
-                      </div>
+                      <div style={{ display:'flex', justifyContent:'center'}}>
+                      {n && see && <div className='col-12 col-md-6 sfondocard1' p={regra} id='divline' style={{justifyContent:'center', position:'relative', height:w}}>
+                        {n && see && <Line options={options} data={data} id='lnchart' />}
                       </div>}
+                      </div>
         </div>
 
 };

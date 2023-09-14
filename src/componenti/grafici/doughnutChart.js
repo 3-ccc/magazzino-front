@@ -33,7 +33,7 @@ const Doughnutchart = ()=>{
     const [dati, setDati] = useState();
     const [lab, setLab] = useState();
     const [dat, setDat] = useState();
-    const [w, setW] = useState(window.innerWidth<768 ? window.innerWidth-30 : window.innerWidth/2-30);
+    const [w, setW] = useState(window.innerWidth<768 ? window.innerWidth/2-30 : (window.innerWidth<1200 ? window.innerWidth/4-30 : window.innerWidth/3/2-30));
 
     const { wi } = useWindowDimensions();
 
@@ -104,7 +104,7 @@ setW(document.getElementById('divdonut').offsetWidth)
       return <div style={{'width': '100%'}}>
           {lab && dat && dati && <h3>riepilogo usati per nome</h3>}
           <div style={{'width': '100%', display:'flex', justifyContent:'center'}}>
-            <div className='col-12 col-md-6 sfondocard1' id='divdonut' style={{justifyContent:'center', position:'relative', height:w}}>
+            <div className='col-12 col-md-6 col-xl-4 sfondocard1' id='divdonut' style={{justifyContent:'center', position:'relative', height:w}}>
               {lab && dat && dati && <Doughnut data={dati} />}
             </div>
           </div>
