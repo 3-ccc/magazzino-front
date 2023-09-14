@@ -10,8 +10,6 @@ function CardOperazione({ ope, indice, noresize }) {
   const { wi } = useWindowDimensions();
   const navigate = useNavigate();
 
-//console.log(click)
-
   function internalDelete() {
     /*deleteProduct(ope.id_product).then((element) => {
       if (element.isError) {

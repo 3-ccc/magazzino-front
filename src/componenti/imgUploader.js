@@ -1,11 +1,11 @@
 import { DarkModeContext } from "../tema/DarkModeContext";
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import { sendImage } from "../api/indexApi";
 
 const ImgUploader = ({/*msg*/}) => {
   const { darkMode } = useContext(DarkModeContext);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const [srcimg, setSrcimg] = useState('');
   const [folder, setFolder] = useState('');
   const [filename, setFilename] = useState('');

@@ -15,11 +15,6 @@ function CardProdotto({ singleProduct, indice }) {
   const [image, setImage] = useState();
 
   //sistema immagini
-  //--> se cambiato nome categ o quello che è img non matcha piu
-  //--
-  //fare tipo dizionario nomecat: 'imgcat'
-  //oppure prendere img con stesso nome   -> da rinominare uguali
-
   //non proprio fattibile usare img caricate?
 //google? tanto ormai c'è l acc
 //dovrei passargliele--- uploader
@@ -64,12 +59,8 @@ https://www.youtube.com/watch?v=1y0-IfRW114   //?
 
 useEffect(() => {
   var toastfarcitov = [].slice.call(document.querySelectorAll(".popover"));
-  //console.log(toastfarcito)
    
     toastfarcitov.map((t)=>{
-      //console.log(t.id)
-
-
 
 //se faccio freccetta avanti/indietro non va via-> quando cambiata route va fattto
 //meglio al caricamento di ogni pagina?

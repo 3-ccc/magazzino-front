@@ -12,7 +12,7 @@ import {
   ArcElement,
 } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import { getDonut, getElementsfsp } from '../../api/indexApi';
+import { getDonut } from '../../api/indexApi';
 import { useWindowDimensions } from "../../altro/windowDimensions";
 
 ChartJS.register(

@@ -3,9 +3,25 @@ import "./login.css";
 import { DarkModeContext } from "../tema/DarkModeContext";
 import Linechart from "../componenti/grafici/lineChart";
 import Doughnutchart from "../componenti/grafici/doughnutChart";
+//import { MsgContext } from "../tema/MsgContext";
 
 function Grafici() {
   const { darkMode } = useContext(DarkModeContext);
+/*  const  { msg, setmess }  = useContext(MsgContext);
+
+  const showmsg=(s, t, m)=>{
+    //console.log(document.getElementById('toast'))
+    //document.getElementById('toast').toast('show')
+    //$('.toast').toast({data-autohide='true'})
+    //setMsg({
+    setmess({
+    
+      stile:s,
+      titolo:t,
+      mess:m
+    })
+  }
+*/
   useEffect(()=>{
     var toastfarcitov = [].slice.call(document.querySelectorAll(".popover"));     
       toastfarcitov.map((t)=>{

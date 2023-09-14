@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { DarkModeContext } from "../tema/DarkModeContext";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useWindowDimensions } from "../altro/windowDimensions";
 import './componenti.css'
 

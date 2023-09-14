@@ -29,7 +29,6 @@ const Linechart = ()=>{
   const [msg, setMsg] = useState([]);
   //const [refresh, setRefresh] = useState(0);
   const [n, setN] = useState();
-  const [regra, setRegra] = useState('false');
   const [see, setSee] = useState(true);
 
   const [tendine, setTendine] = useState();
@@ -111,32 +110,6 @@ console.log(wi)*/
 ///clearTimeout(myTimeout)
 //console.log(myTimeout)
 
-    /*
-    console.log('set doc')
-    console.log(document.getElementById('lnchart').style.height)
-  document.getElementById('lnchart').style.height=''+1000+'px'
-    console.log(document.getElementById('lnchart').style.height)
-    document.getElementById('lnchart').style.width=''+1000+'px'
-*//*
-  let r = (Math.random() + 1).toString(36).substring(7);
-
-  if(r==regra){
-    r=r+'a'
-  }
-
-  //nada non va
-  //solo prima volta
-  //console.log(regra)
-  /*if(regra=='true'){
-    setRegra('false')
-  }else{
-    setRegra('true')
-  }*//*
-  if(regra){
-    setRegra()
-  }else{
-    setRegra(r)
-  }*/
 }
       }, [w]);
 /*
@@ -280,7 +253,7 @@ useEffect(() => {
                         </div>
                       </div>
                       <div style={{ display:'flex', justifyContent:'center'}}>
-                      {n && see && <div className='col-12 col-md-6 sfondocard1' p={regra} id='divline' style={{justifyContent:'center', position:'relative', height:w}}>
+                      {n && see && <div className='col-12 col-md-6 sfondocard1' id='divline' style={{justifyContent:'center', position:'relative', height:w}}>
                         {n && see && <Line options={options} data={data} id='lnchart' />}
                       </div>}
                       </div>
