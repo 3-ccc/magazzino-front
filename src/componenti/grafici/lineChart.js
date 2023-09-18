@@ -142,6 +142,12 @@ useEffect(() => {
   useEffect(() => {
     if(n){
 
+/*
+
+se mese doppio ? mette giusto?
+di ok
+
+*/
     getLine(n).then((element) => {
       //console.log(element)
       if (!element.isError) {
