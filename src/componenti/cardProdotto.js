@@ -294,7 +294,7 @@ const hextorgb=(hexcolor)=>{
         {/*style=borderRadius:'5px', background: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${prova})`, backgroundRepeat:'no-repeat',backgroundSize:'150%',backgroundPosition:'center*/}
         {/*<p>*/}
         <div className="card-text m-1" style={{position:'relative'}} >
-          <p className="prova m-1" style={ !(singleProduct.categoria && singleProduct.categoria.img) ? {backgroundColor: (indice%2!=0 ? '#f1f4dc' : '#244e23')} : {backgroundImage: `url(${(singleProduct.categoria && singleProduct.categoria.img) ? 'https://drive.google.com/uc?export=view&id='+singleProduct.materiale.img : prova }))`}}>
+          <p className="prova m-1" style={ !(singleProduct.categoria && singleProduct.categoria.img) ? {backgroundColor: (indice%2!=0 ? '#f1f4dc' : '#244e23')} : {backgroundImage: `url(${(singleProduct.categoria && singleProduct.categoria.img) ? 'https://drive.google.com/uc?export=view&id='+singleProduct.categoria.img : prova }))`}}>
             {'categoria: '+((singleProduct.categoria && singleProduct.categoria.nome) ? singleProduct.categoria.nome : '-')}</p>
           <p className="provai">{'categoria: '+((singleProduct.categoria && singleProduct.categoria.nome) ? singleProduct.categoria.nome : '-')}</p>
           </div>
