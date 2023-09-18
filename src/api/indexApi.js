@@ -14,29 +14,24 @@ function retrieveErrors(statusCode, data) {
 //tipo in 400
 
   switch (statusCode) {
-    case 200:
-      //request ok
+    case 200://request ok
       break;
-    case 201:
-      //created element
+    case 201://created element
       break;
 
-    case 400:
-      //Bad Request
+    case 400://Bad Request
       isError = true;
       messageError =
         "Richiesta non valida.";
       break;
 
-    case 401:
-      //Unauthorized Access
+    case 401://Unauthorized Access
       isError = true;
       messageError = "Username o Password errati, o l'utente non è autorizzato all'accesso.";
       emptyStore();
       break;
 
-    case 403:
-      //forbidden
+    case 403://forbidden
       isError = true;
       messageError =
         "Azione non consentita.";

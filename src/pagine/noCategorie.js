@@ -315,6 +315,9 @@ function NoCategorie({ type }) {
             piu il retrieve dopo quindi +4 fanno 12 chiamate da gestire insieme-----mhh 
 
   chiamate uguali cambia solo '...'*/}
+      <div style={{marginRight:'2em'}}>
+        <PaginSiNo p={pagin} setp={setPagin} ></PaginSiNo>
+      </div>
         <FiltriNoCat filtri={filtri} setFiltri={setFiltri}></FiltriNoCat>
 
         {pagin && 
@@ -407,9 +410,7 @@ fa vedere ultimo/primo poi lo toglie
           </div>
         </div>
       )}
-      <div style={{marginRight:'2em'}}>
-      <PaginSiNo p={pagin} setp={setPagin} ></PaginSiNo>
-      </div>
+
     </div>
   );
 }

@@ -200,6 +200,9 @@ const ListaSCarico = ({ mode }) => {
         )}
         
         <div style={{marginLeft:'2em', marginRight:'2em'}}>
+        <div style={{}}>
+      <PaginSiNo p={pagin} setp={setPagin} ></PaginSiNo>
+      </div>
       <FiltriProd filtri={filtri} setFiltri={setFiltri} ></FiltriProd>
 
       {pagin && 
@@ -303,9 +306,7 @@ fa vedere ultimo/primo poi lo toglie
             </div>
           </div>
         </div>
-        <div style={{}}>
-      <PaginSiNo p={pagin} setp={setPagin} ></PaginSiNo>
-      </div>
+
       </div>
 
     </div>

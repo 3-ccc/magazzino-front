@@ -347,6 +347,9 @@ console.log(e)
             solo una per cat/sottocat
 
   rivedi colori testo*/}
+        <div style={{marginLeft:'2em', marginRight:'2em'}}>
+          <PaginSiNo p={pagin} setp={setPagin} ></PaginSiNo>
+      </div>
       <FiltriCat filtri={filtri} setFiltri={setFiltri} ></FiltriCat>
 
             {pagin && 
@@ -507,9 +510,7 @@ se sottocat non ha cat si rompe
           </div>
         </div>
       )}
-      <div style={{marginLeft:'2em', marginRight:'2em'}}>
-          <PaginSiNo p={pagin} setp={setPagin} ></PaginSiNo>
-      </div>
+
     </div>
   );
 }

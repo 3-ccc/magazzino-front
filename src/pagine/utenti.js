@@ -158,6 +158,9 @@ function Utenti({ type }) {
 
   return (
     <div style={{marginTop:'2em', marginBottom:'2em'}}>
+                <div style={{marginRight:'2em'}}>
+          <PaginSiNo p={pagin} setp={setPagin} ></PaginSiNo>
+          </div>
       <FiltriUte filtri={filtri} setFiltri={setFiltri}></FiltriUte>
 
       {pagin && 
@@ -255,9 +258,7 @@ postpag pag.lenght
               })}
 
           </div>
-          <div style={{marginRight:'2em'}}>
-          <PaginSiNo p={pagin} setp={setPagin} ></PaginSiNo>
-          </div>
+
         </div>
       )}
 

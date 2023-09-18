@@ -270,6 +270,7 @@ console.log(darkMode)
 
 <button style={{ alignSelf:'end'}} className={"btn btn-outline-success m-0 p-2 " + (!darkMode ? "nav2buttonl" : "nav2button")}
           onClick={()=>{navigate("/graf");}}><small><i className="bi bi-bar-chart-fill"></i>{' grafici'}</small></button>
+      <PaginSiNo p={pagin} setp={setPagin} ></PaginSiNo>
         </div>
 
       <FiltriProd filtri={filtri} setFiltri={setFiltri} ></FiltriProd>
@@ -353,9 +354,7 @@ fa vedere ultimo/primo poi lo toglie
             );
           })}
       </div>
-      <div style={{marginRight:'2em'}}>
-      <PaginSiNo p={pagin} setp={setPagin} ></PaginSiNo>
-      </div>
+
     </div>
   );
 }

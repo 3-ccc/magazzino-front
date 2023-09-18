@@ -240,6 +240,8 @@ const Operazioni = () => {
             </p>
           </div>
         )}
+          <PaginSiNo p={pagin} setp={setPagin} ></PaginSiNo>
+
         <FiltriOpe filtri={filtri} setFiltri={setFiltri}></FiltriOpe>
         <div className="row">
           <h2 className={"col " + (darkMode ? "testolight" : "testodark")} style={{ textAlign: "left" }}>
@@ -364,7 +366,6 @@ postpag pag.lenght
             </div>
           </div>
         </div>
-          <PaginSiNo p={pagin} setp={setPagin} ></PaginSiNo>
       </div>
 
     </div>
