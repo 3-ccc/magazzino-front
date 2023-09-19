@@ -307,8 +307,8 @@ console.log(e)
     //poi cmq richiamare-> x id (get)
     //altro campo x sapere se nuovo o no -> almeno non i puo mod?
 
-    console.log('sottocat mod')
-    console.log(e)
+    //console.log('sottocat mod')
+    //console.log(e)
 
     modifySubcat(e,type).then((element) => {
       if (!element.isError) {

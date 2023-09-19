@@ -49,7 +49,7 @@ useEffect(() => {
 
 //chiama funz farà o crea o mod
 
-console.log(elem)
+//console.log(elem)
   if(i==-1){
     resetn(false)
     elem.nome=nome
