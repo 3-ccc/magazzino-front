@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/magazzino-front/static/css/main.94a2f53c.css",
-    "main.js": "/magazzino-front/static/js/main.904d5960.js",
+    "main.css": "/magazzino-front/static/css/main.138f86bc.css",
+    "main.js": "/magazzino-front/static/js/main.af60f740.js",
     "static/js/498.ee56e067.chunk.js": "/magazzino-front/static/js/498.ee56e067.chunk.js",
     "static/js/703.3356c670.chunk.js": "/magazzino-front/static/js/703.3356c670.chunk.js",
     "static/js/513.efc18007.chunk.js": "/magazzino-front/static/js/513.efc18007.chunk.js",
@@ -10,6 +10,7 @@
     "static/media/rock.png": "/magazzino-front/static/media/rock.cee4e6fe1bc364032554.png",
     "static/media/noone.png": "/magazzino-front/static/media/noone.57888c6c08091fe2a43c.png",
     "static/media/copper.png": "/magazzino-front/static/media/copper.f61afb9d9e00661aa431.png",
+    "static/media/multi.png": "/magazzino-front/static/media/multi.4eebe727d2f882ea6af9.png",
     "static/media/silver.png": "/magazzino-front/static/media/silver.1e51d4cff72c9546695e.png",
     "static/media/bootstrap-icons.woff?": "/magazzino-front/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
     "static/media/bootstrap-icons.woff2?": "/magazzino-front/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
@@ -17,15 +18,15 @@
     "static/media/noimageavailable.png": "/magazzino-front/static/media/noimageavailable.aadc02855ce9056e992b.png",
     "static/media/logo.png": "/magazzino-front/static/media/logo.2c1aa5b79d6c59163193.png",
     "index.html": "/magazzino-front/index.html",
-    "main.94a2f53c.css.map": "/magazzino-front/static/css/main.94a2f53c.css.map",
-    "main.904d5960.js.map": "/magazzino-front/static/js/main.904d5960.js.map",
+    "main.138f86bc.css.map": "/magazzino-front/static/css/main.138f86bc.css.map",
+    "main.af60f740.js.map": "/magazzino-front/static/js/main.af60f740.js.map",
     "498.ee56e067.chunk.js.map": "/magazzino-front/static/js/498.ee56e067.chunk.js.map",
     "703.3356c670.chunk.js.map": "/magazzino-front/static/js/703.3356c670.chunk.js.map",
     "513.efc18007.chunk.js.map": "/magazzino-front/static/js/513.efc18007.chunk.js.map",
     "787.a9ffdf91.chunk.js.map": "/magazzino-front/static/js/787.a9ffdf91.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.94a2f53c.css",
-    "static/js/main.904d5960.js"
+    "static/css/main.138f86bc.css",
+    "static/js/main.af60f740.js"
   ]
 }
