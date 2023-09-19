@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/magazzino-front/static/css/main.94a2f53c.css",
-    "main.js": "/magazzino-front/static/js/main.dbf835bf.js",
+    "main.js": "/magazzino-front/static/js/main.a775a5ef.js",
     "static/js/498.ee56e067.chunk.js": "/magazzino-front/static/js/498.ee56e067.chunk.js",
     "static/js/703.3356c670.chunk.js": "/magazzino-front/static/js/703.3356c670.chunk.js",
     "static/js/513.efc18007.chunk.js": "/magazzino-front/static/js/513.efc18007.chunk.js",
@@ -18,7 +18,7 @@
     "static/media/logo.png": "/magazzino-front/static/media/logo.2c1aa5b79d6c59163193.png",
     "index.html": "/magazzino-front/index.html",
     "main.94a2f53c.css.map": "/magazzino-front/static/css/main.94a2f53c.css.map",
-    "main.dbf835bf.js.map": "/magazzino-front/static/js/main.dbf835bf.js.map",
+    "main.a775a5ef.js.map": "/magazzino-front/static/js/main.a775a5ef.js.map",
     "498.ee56e067.chunk.js.map": "/magazzino-front/static/js/498.ee56e067.chunk.js.map",
     "703.3356c670.chunk.js.map": "/magazzino-front/static/js/703.3356c670.chunk.js.map",
     "513.efc18007.chunk.js.map": "/magazzino-front/static/js/513.efc18007.chunk.js.map",
@@ -26,6 +26,6 @@
   },
   "entrypoints": [
     "static/css/main.94a2f53c.css",
-    "static/js/main.dbf835bf.js"
+    "static/js/main.a775a5ef.js"
   ]
 }
