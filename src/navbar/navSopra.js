@@ -31,7 +31,9 @@ function NavSopra({ selezionato, setSelezionato }) {
     >
       <a
         className={"navbar-brand " + (darkMode ? "testolight" : "testodark")}
-        href="/magazzino-front"
+        onClick={() => {
+          click("");
+        }}
       >
         {<img
           src={logo}
