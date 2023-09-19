@@ -3,6 +3,7 @@ import { DarkModeContext } from "../tema/DarkModeContext";
 import { useContext, useEffect, useState } from "react";
 import './componenti.css'
 import prova from '../img/dotted.png'
+import multi from '../img/multi.png'
 //quelle con scritta si vede scritta...
 //quasi tutte rompono --> centro
 //in realta no--> è xke riprende stessa immagine per lo sfondo categoria
@@ -217,7 +218,7 @@ const hextorgb=(hexcolor)=>{
     <div
     id="divmate"
       className={ //pp immagine diversa?
-        "card m-2 pp  " +
+        "card m-2 pp " +
         (indice % 2 === 0
           ? darkMode
             ? "sfondocard1"
@@ -226,7 +227,7 @@ const hextorgb=(hexcolor)=>{
           ? "sfondocard2"
           : "sfondocard1")
       }///static/media/copper.f61afb9d9e00661aa431.png"
-      style={{ width: "18rem", position:"relative" , backgroundImage:  `url(${(singleProduct.materiale && singleProduct.materiale.img) ? 'https://drive.google.com/uc?export=view&id='+singleProduct.materiale.img : prova })` }}//'https://drive.google.com/uc?export=view&id=1aJnJHtPAnVR7Ma7WIzAup_-t5uZazjam'      
+      style={{ width: "18rem", position:"relative" , backgroundImage:  `url(${(singleProduct.materiale && singleProduct.materiale.img) ? 'https://drive.google.com/uc?export=view&id='+singleProduct.materiale.img : prova }), url(${(singleProduct.colore && singleProduct.colore.img) ? 'https://drive.google.com/uc?export=view&id='+singleProduct.colore.img : multi })` }}//'https://drive.google.com/uc?export=view&id=1aJnJHtPAnVR7Ma7WIzAup_-t5uZazjam'      
       //on error set quella base ma cosi funziona?? error su div e no img
       //ma poi src non funziona---
       //serve state ma cmq on error????

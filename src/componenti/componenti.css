@@ -211,7 +211,17 @@
     background-repeat:no-repeat;
     background-position-y: -15px;
     background-size: 30%; 
-    background-position-x: calc(100% + 15px);
+    background-position-x: calc(100% + 15px), -15px;
+    border-radius: 10px;
+    height: 10%;
+  }
+/*
+  .pp1{
+    /*background-image: url(../img/copper.png);*//*
+    background-repeat:no-repeat;
+    background-position-y: -15px;
+    background-size: 30%; 
+    background-position-x: -15px;
     border-radius: 10px;
     height: 10%;
   }

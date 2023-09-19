@@ -129,7 +129,7 @@ sendImage(srcimg, folder, filename.trimEnd().trimStart()
                   }}
                 >
                   <option value={""}>Seleziona un'opzione</option>
-                  {/*<option value={"colori"}>colori</option>*/}
+                  <option value={"colori"}>colori</option>
                   <option value={"materiali"}>materiali</option>
                   <option value={"nomi"}>nomi</option>
                   <option value={"categorie"}>categorie</option>
