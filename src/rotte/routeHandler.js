@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { HomePage } from "../pagine/homePage";
 import { ListaProdotti } from "../pagine/listaProdotti";
+import { ListaProdottiinatt } from "../pagine/listaProdottiinatt";
 import { ListaSCarico } from "../pagine/listaSCarico";
 import { SCarico } from "../pagine/carico";
 //import { Scarico } from "../pagine/scarico";
@@ -113,6 +114,11 @@ function RouterHandler({ setSelezionato }) {
       <Route path="/altro/immagini" element={
         <ProtectedRoute>
           <ImgUploader />
+        </ProtectedRoute>
+      } />
+      <Route path="/altro/inattivi" element={
+        <ProtectedRoute>
+          <ListaProdottiinatt />
         </ProtectedRoute>
       } />
 

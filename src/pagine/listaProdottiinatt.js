@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import CardProdotto from "../componenti/cardProdotto.js";
-import { getProductsfsp } from "../api/indexApi.js";
+import { getProductsInactivefsp } from "../api/indexApi.js";
 import { DarkModeContext } from "../tema/DarkModeContext";
 import { MsgContext } from "../tema/MsgContext";
 import { ScrollContext } from "../tema/ScrollContext.js";
@@ -12,7 +12,7 @@ import { PaginSiNo } from "../componenti/paginSiNo.js";
 
 
 
-function ListaProdotti({/*setMsg*/}) {
+function ListaProdottiinatt({/*setMsg*/}) {
   const { darkMode } = useContext(DarkModeContext);
   const  { msg, setmess }  = useContext(MsgContext);
   const { heightText, seth } = useContext(ScrollContext)
@@ -68,7 +68,7 @@ console.log(darkMode)
       pagin:pagin
   }
 
-    getProductsfsp(p).then((element) => {
+  getProductsInactivefsp(p).then((element) => {
       //console.log(element)
       if (!element.isError) {
         setListProduct(element.data.prodotti);
@@ -169,7 +169,7 @@ console.log(darkMode)
       pagin:pagin
   }
 
-  getProductsfsp(p).then((element) => {
+  getProductsInactivefsp(p).then((element) => {
     //console.log(element)
     if (!element.isError) {
       setListProduct(element.data.prodotti);
@@ -350,7 +350,6 @@ fa vedere ultimo/primo poi lo toglie
                 singleProduct={p}
                 indice={i}
                 key={p._id}
-                pulsanti={true}
                 refresh={refr}
                 setrefresh={setRef}
                 //debug key={p.id}
@@ -363,4 +362,4 @@ fa vedere ultimo/primo poi lo toglie
   );
 }
 
-export { ListaProdotti };
+export { ListaProdottiinatt };

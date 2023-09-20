@@ -12,7 +12,6 @@ function retrieveErrors(statusCode, data) {
 //da sistemare
 //se c'è anch emessaggio inviato da back magari utilizza?
 //tipo in 400
-
   switch (statusCode) {
     case 200://request ok
       break;
@@ -21,8 +20,7 @@ function retrieveErrors(statusCode, data) {
 
     case 400://Bad Request
       isError = true;
-      messageError =
-        "Richiesta non valida.";
+      messageError ="Richiesta non valida.";
       break;
 
     case 401://Unauthorized Access
@@ -33,14 +31,12 @@ function retrieveErrors(statusCode, data) {
 
     case 403://forbidden
       isError = true;
-      messageError =
-        "Azione non consentita.";
+      messageError ="Azione non consentita.";
       break;
 
     case 404:
       isError = true;
-      messageError =//
-        "Gli elementi ricercati non sono stati trovati.\nRiprova!";
+      messageError ="Gli elementi ricercati non sono stati trovati.\nRiprova!";
       break;
 
       case 418: //teapot
@@ -60,8 +56,7 @@ function retrieveErrors(statusCode, data) {
 
     default:
       isError = true;
-      messageError =
-        "Errore sconosciuto.\nContattare l'assistenza e fornire il seguente codice.\n" +
+      messageError ="Errore sconosciuto.\nContattare l'assistenza e fornire il seguente codice.\n" +
         statusCode;
       break;
   }
@@ -99,7 +94,8 @@ const postLogin = async (username, password) => {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
+    //??
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));
   }
 };
 
@@ -121,8 +117,7 @@ async function getUsers() {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function getUsersfsp(fsp) {
@@ -138,8 +133,7 @@ async function getUsersfsp(fsp) {
     return retrieveErrors(response.status, response.data);
   } catch (e) {
     console.log(e)
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function getSingleUser(idUser) {
@@ -153,8 +147,7 @@ async function getSingleUser(idUser) {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 //create
@@ -179,8 +172,7 @@ async function modifyUser(user) {
     return retrieveErrors(response.status, response.data);
   } catch (e) {
     //console.log(e);
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 //modify super
@@ -203,7 +195,7 @@ async function modifyUserSuper(user) {
     return retrieveErrors(response.status, response.data);
   } catch (e) {
     //console.log(e);
-    return retrieveErrors(e.status, e.data);
+    return retrieveErrors(e.status, e.data);    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));
   }
 }
 
@@ -223,8 +215,7 @@ async function createUser(user) {
     return retrieveErrors(response.status, response.data);
   } catch (e) {
     //console.log(e);
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 /*async function deleteUser(idUser) {
@@ -257,8 +248,7 @@ async function getAllProducts() {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function getProductsfsp(fsp) {
@@ -277,8 +267,26 @@ async function getProductsfsp(fsp) {
 //code
 
 //data status
-    return retrieveErrors(e.status, e.data);
-  }
+return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
+}
+
+async function getProductsInactivefsp(fsp) {
+  try {
+    //prodotti
+    const response = await axios.put("/prodotti/fspinattivi", {
+      fsp
+    },
+    {
+      headers: { Authorization: requireTokenAuth() },
+    });
+    return retrieveErrors(response.status, response.data);
+  } catch (e) {
+//console.log(e)
+//sara sempre errore di axios no...
+//code
+
+//data status
+return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function getSingleProduct(id) {
@@ -290,8 +298,7 @@ async function getSingleProduct(id) {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function getProductpop(id) {
@@ -302,8 +309,7 @@ async function getProductpop(id) {
     });
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 /*async function deleteProduct(id) {
@@ -331,16 +337,15 @@ async function createProduct(product) {
         colore: product.colore!='' ? product.colore : null,
         quantita: product.quantita,
         limitescorta: product.limitescorta,
+        attivo: true
       },
       {
         headers: { Authorization: requireTokenAuth() },
       }
     );
-
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function modifyProduct(product) {
@@ -356,6 +361,7 @@ async function modifyProduct(product) {
         colore: product.colore,
         quantita: product.quantita,
         limitescorta: product.limitescorta,
+        attivo: product.attivo
       },
       {
         headers: { Authorization: requireTokenAuth() },
@@ -365,8 +371,7 @@ async function modifyProduct(product) {
     return retrieveErrors(response.status, response.data);
   } catch (e) {
     //console.log(e);
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 /**
@@ -386,8 +391,7 @@ async function getElements(tipo) {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 //prova insieme
 async function getElementsfsp(fsp, tipo) {
@@ -402,8 +406,7 @@ async function getElementsfsp(fsp, tipo) {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function createElement(m, tipo) {
@@ -420,8 +423,7 @@ async function createElement(m, tipo) {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function modifyElement(m, tipo) {
@@ -439,8 +441,7 @@ async function modifyElement(m, tipo) {
     return retrieveErrors(response.status, response.data);
   } catch (e) {
     //console.log(e);
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 /**
@@ -682,8 +683,7 @@ async function getCategories() {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 /*async function getMaterialsfsp() {
@@ -716,8 +716,7 @@ async function createCategory(m) {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function modifyCategory(c) {
@@ -735,8 +734,7 @@ async function modifyCategory(c) {
     return retrieveErrors(response.status, response.data);
   } catch (e) {
     //console.log(e);
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 /**
@@ -756,8 +754,7 @@ async function getSubcats() {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function getSubcatsfsp(fsp) {
@@ -771,8 +768,7 @@ async function getSubcatsfsp(fsp) {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function createSubcat(m) {
@@ -791,8 +787,7 @@ async function createSubcat(m) {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function modifySubcat(s) {
@@ -810,8 +805,7 @@ async function modifySubcat(s) {
     return retrieveErrors(response.status, response.data);
   } catch (e) {
     //console.log(e);
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 /**
@@ -832,8 +826,7 @@ async function getAllOperations() {
 
     return retrieveErrors(response.status, response.data.result);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function getOperationsfsp(fsp) {
@@ -847,8 +840,7 @@ async function getOperationsfsp(fsp) {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 /*
@@ -884,8 +876,7 @@ async function createLoad(ope) {
     //console.log(response);
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 async function createUnload(ope) {
@@ -906,8 +897,7 @@ async function createUnload(ope) {
     //console.log(response);
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 /*async function modifyOrder(order) {
@@ -941,8 +931,7 @@ async function getTendine() {
 
     return retrieveErrors(response.status, response.data);
   } catch (e) {
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
 //manda immagine
@@ -985,8 +974,7 @@ async function sendImage(immagine, cartella, nome) {
     
   } catch (e) {
     console.log(e)
-    return retrieveErrors(e.status, e.data);
-  }
+    return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));  }
 }
 
   async function getListTable() {
@@ -999,8 +987,7 @@ async function sendImage(immagine, cartella, nome) {
       //console.log({ response });
       return retrieveErrors(response.status, response.data);
     } catch (e) {
-      return retrieveErrors(e.status, e.data);
-    }
+      return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));    }
   }
 
   async function getLine(nome) {
@@ -1016,8 +1003,7 @@ async function sendImage(immagine, cartella, nome) {
       return retrieveErrors(response.status, response.data);
     } catch (e) {
       console.log(e)
-      return retrieveErrors(e.status, e.data);
-    }
+      return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));    }
   }
 
   async function getDonut() {
@@ -1031,8 +1017,37 @@ async function sendImage(immagine, cartella, nome) {
       return retrieveErrors(response.status, response.data);
     } catch (e) {
       console.log(e)
-      return retrieveErrors(e.status, e.data);
-    }
+      return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));    }
+  }
+
+  async function inactiveProduct(product) {//da attivo a inattivo
+    try {
+      const response = await axios.put(
+        "/prodotti/dis/" + product._id,{},
+        {
+          headers: { Authorization: requireTokenAuth() },
+        }
+      );
+  
+      return retrieveErrors(response.status, response.data);
+    } catch (e) {
+      //console.log(e);
+      return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));    }
+  } 
+
+  async function activeProduct(product) {//da inattivo a attivo
+    try {
+      const response = await axios.put(
+        "/prodotti/att/" + product._id,{},
+        {
+          headers: { Authorization: requireTokenAuth() },
+        }
+      );
+  
+      return retrieveErrors(response.status, response.data);
+    } catch (e) {
+      //console.log(e);
+      return retrieveErrors(((e.response && e.response.status) ? e.response.status : e.status), ((e.response && e.response.data) ? e.response.data : e.data));    }
   }
 
 export {
@@ -1046,6 +1061,7 @@ export {
 //  deleteUser,
   getAllProducts,
   getProductsfsp,
+  getProductsInactivefsp,
   getSingleProduct,
   getProductpop,
   createProduct,
@@ -1087,4 +1103,6 @@ export {
   getListTable,
   getLine,
   getDonut,
+  inactiveProduct,
+  activeProduct,
 };

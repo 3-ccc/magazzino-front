@@ -45,6 +45,7 @@ function DropdownButton({
     <li><a className="dropdown-item" onClick={()=>{navigate(goToPage+"/colori")}}>Colori</a></li>
     <li><a className="dropdown-item" onClick={()=>{navigate(goToPage+"/categorie")}}>Categorie</a></li>
     <li><a className="dropdown-item" onClick={()=>{navigate(goToPage+"/immagini")}}>Carica immagini</a></li>
+    <li><a className="dropdown-item" onClick={()=>{navigate(goToPage+"/inattivi")}}>Prodotti inattivi</a></li>
 
     {/*<li><a className="dropdown-item" href={goToPage+"/sottocategorie"}>Sottocategorie</a></li>*/}
   </ul>

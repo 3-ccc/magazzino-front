@@ -164,7 +164,6 @@ const Operazioni = () => {
   //no cambiare solo il totale...
 
 
-
   /*  let nuovoarray = [];
     //filter
     //filter da rivedere

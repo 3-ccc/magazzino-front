@@ -33,6 +33,7 @@ function ProductNewModPage({ mod }) {
     materiale:"",
     colore:"",
     misura:"",
+    attivo: mod=='new' ? true : '',
     //pezzi magazzino
   });
 
@@ -67,6 +68,7 @@ useEffect(()=>{
     materiale:"",
     misura:"",
     colore:"",
+    attivo:true,
     //pezzi magazzino
   });
   var idOfProduct = undefined;
@@ -179,6 +181,10 @@ useEffect(()=>{
         setError('Inserire quantità intera')
       }
     }
+    if (product.attivo!==true && product.attivo!=='true' && product.attivo!==false && product.attivo!=='false' /*|| product.nome.trimEnd().trimStart()==''*/) {
+      setError("Inserire attivo");
+    }
+
     //solo interi           +o-
 
     //se non c'è limitescorta problemi?
@@ -205,7 +211,8 @@ useEffect(()=>{
       setError("Inserire nome");
     }
 
-  }, [product.nome, product.quantita, product.limitescorta, product.categoria, product.materiale, product.colore]);
+
+  }, [isOnModify, product.nome, product.quantita, product.limitescorta, product.categoria, product.materiale, product.colore, product.attivo]);
 
   const confirmSave = () => {
     if (
@@ -215,7 +222,6 @@ useEffect(()=>{
       product.colore 
 
     ) {
-      console.log(product)
       if (error === null) {
         //chiamata di api di salvataggio
 
@@ -240,7 +246,9 @@ useEffect(()=>{
                 materiale:"",
                 misura:"",
                 colore:"",
+                attivo:true
               });
+              setIsOnModify(true)
               setMsgConferma(true);
             }
           });
@@ -272,7 +280,6 @@ useEffect(()=>{
           : "Aggiunta di un nuovo prodotto"}
           
       </h2>
-      da cell funziona? alrimenti on clik---
       <div className="row flex-wrap align-items-center">
         <div className={"col-10 text-center "} id="m">
           {over && <small>Il 'codice' viene generato automaticamente nel seguente modo: </small>}
@@ -676,6 +683,36 @@ useEffect(()=>{
                         </select>
                       </div>
                     </div>
+                    <div className="form-group row" style={{justifyContent:'center'}}>
+                    <label
+                        htmlFor="pubblicaPrivata"
+                        className="col-md-3 col-sm-4 col-form-label"
+                      >
+                        Attivo
+                      </label>
+                      <div className="col-md-4 col-sm-8">
+                        <select
+                          disabled={mod==='new' || !isOnModify}
+                          className={//new sempre non toccabile
+                            ((mod==='new' || !isOnModify)
+                              ? "form-control-plaintext"
+                              : "form-control") + " custom-select"
+                          }
+                          id="attivo"
+                          value={product.attivo}
+                          onChange={(el) => {
+                            setProduct({
+                              ...product,
+                              attivo: el.target.value,
+                            });
+                          }}
+                        >
+                          <option value={""}></option>
+                          <option value={true} key={'si'}>si</option>
+                          <option value={false} key={'no'}>no</option>
+                        </select>
+                      </div>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -757,6 +794,7 @@ useEffect(()=>{
                     materiale:"",
                     misura:"",
                     colore:"",
+                    attivo:true
                   })
                 }
                 className={

@@ -4,13 +4,14 @@ import { useContext, useEffect, useState } from "react";
 import './componenti.css'
 import prova from '../img/dotted.png'
 import multi from '../img/multi.png'
+import { inactiveProduct, activeProduct } from "../api/indexApi";
 //quelle con scritta si vede scritta...
 //quasi tutte rompono --> centro
 //in realta no--> è xke riprende stessa immagine per lo sfondo categoria
 //sara da ascegliere migliore
 
 
-function CardProdotto({ singleProduct, indice }) {
+function CardProdotto({ singleProduct, indice, pulsanti, refresh, setrefresh }) {
   const { darkMode } = useContext(DarkModeContext);
   const navigate = useNavigate();
   const [image, setImage] = useState();
@@ -188,6 +189,41 @@ const hextorgb=(hexcolor)=>{
     navigate(route, state);
   }
 
+const inactive =()=>{
+  //console.log(singleProduct)
+    inactiveProduct(singleProduct).then((element) => {
+      if (element.isError) {
+        ////
+      } else {
+        /////
+        var toastfarcito = [].slice.call(document.querySelectorAll(".popover"));
+          toastfarcito.map((t)=>{
+            document.getElementById(t.id).remove()
+          })
+        setrefresh(!refresh)
+      }
+    });
+}
+////////////////////////////////////////
+//    prima di refresh togliere i toast altrimenti resta li---
+/////////////////////////
+const active =()=>{
+  //console.log(singleProduct)
+
+    activeProduct(singleProduct).then((element) => {
+      if (element.isError) {
+        ////
+      } else {
+        /////
+        var toastfarcito = [].slice.call(document.querySelectorAll(".popover"));
+        toastfarcito.map((t)=>{
+          document.getElementById(t.id).remove()
+        })
+        setrefresh(!refresh)
+      }
+    });
+}
+
  /* const content = `.${classes.pp}`;
   console.log(content)
 */
@@ -306,7 +342,7 @@ const hextorgb=(hexcolor)=>{
         <p className="card-text m-1">{'colore: '+((singleProduct.colore && singleProduct.colore.nome) ? singleProduct.colore.nome : '-')}</p>
       {singleProduct.sottocategoria && singleProduct.sottocategoria.nome && <p className="card-text m-1">{'sottocategoria: '+singleProduct.sottocategoria.nome}</p>}
         
-        <button
+        {pulsanti && <button
           className="btn btn-outline-success nav2button mr-1"
           data-toggle="popover"
           data-placement="top"
@@ -319,8 +355,8 @@ const hextorgb=(hexcolor)=>{
           }}
         >
           <i className="bi bi-pencil-fill"></i>
-        </button>
-        <button
+        </button>}
+        {pulsanti && <button
           className="btn btn-outline-success nav2button mr-1 "
           id="pop1"
           data-toggle="popover"
@@ -335,9 +371,9 @@ const hextorgb=(hexcolor)=>{
           }}
         >
           <i className="bi bi-box-arrow-in-down"></i>
-        </button>
-        <a
-          className="btn btn-outline-success nav2button "
+        </button>}
+        {pulsanti && <a
+          className="btn btn-outline-success nav2button mr-1"
           id="pop2"
           tabIndex='0'
           data-toggle="popover"
@@ -354,7 +390,35 @@ const hextorgb=(hexcolor)=>{
           }}
         >
           <i className="bi bi-box-arrow-up"></i>
-        </a>
+        </a>}
+        {pulsanti && <button
+          className="btn btn-outline-danger nav2button "
+          data-toggle="popover"
+          data-placement="top"
+          data-content="disattiva"
+          data-trigger="hover"
+          onClick={() => {
+            //chiamata attiva o disattiva
+            inactive()
+          }}
+        >
+          <i className="bi bi-slash-circle"></i>
+        </button>}
+        {!pulsanti && <button
+          className="btn btn-outline-success nav2button "
+          data-toggle="popover"
+          data-placement="top"
+          data-content="attiva"
+          data-trigger="hover"
+          onClick={() => {
+            //chiamata attiva o disattiva
+            active()
+          }}
+        >
+          <i className="bi bi-recycle"></i>
+        </button>}
+        {/*recycle  repeat  hammer
+        <i class="bi bi-slash-circle"></i>*/}
         {/*<img src={prova}></img>*/}
       </div>
       {/*</div>*/}
