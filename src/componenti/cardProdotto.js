@@ -15,6 +15,9 @@ function CardProdotto({ singleProduct, indice }) {
   const navigate = useNavigate();
   const [image, setImage] = useState();
 
+  const shadowl='0px 0px 3px #f1f4dc, -2px -2px 3px #f1f4dc, 2px 2px 3px #f1f4dc, 2px -2px 3px #f1f4dc , -2px 2px 3px #f1f4dc' 
+  const shadowd= '0px 0px 3px #244e23 , -2px -2px 3px #244e23 , 2px 2px 3px #244e23 , 2px -2px 3px #244e23 , -2px 2px 3px #244e23'
+
   //sistema immagini
   //non proprio fattibile usare img caricate?
 //google? tanto ormai c'è l acc
@@ -297,7 +300,7 @@ const hextorgb=(hexcolor)=>{
         <div className="card-text m-1" style={{position:'relative'}} >
           <p className="prova m-1" style={ (!singleProduct.categoria || (singleProduct.categoria && !singleProduct.categoria.img)) ? {backgroundColor: (indice%2!=0 ? '#f1f4dc' : '#244e23')} : {backgroundImage: `url(${(singleProduct.categoria && singleProduct.categoria.img) ? 'https://drive.google.com/uc?export=view&id='+singleProduct.categoria.img : prova })`}}>
             {'categoria: '+((singleProduct.categoria && singleProduct.categoria.nome) ? singleProduct.categoria.nome : '-')}</p>
-          <p className="provai" style={(!singleProduct.categoria || (singleProduct.categoria && !singleProduct.categoria.img)) ? {} : {textShadow: (indice%2!=0 ? '0px 0px 3px #f1f4dc, -2px -2px 3px #f1f4dc, 2px 2px 3px #f1f4dc, 2px -2px 3px #f1f4dc , -2px 2px 3px #f1f4dc' : '0px 0px 3px #244e23 , -2px -2px 3px #244e23 , 2px 2px 3px #244e23 , 2px -2px 3px #244e23 , -2px 2px 3px #244e23')}}>{'categoria: '+((singleProduct.categoria && singleProduct.categoria.nome) ? singleProduct.categoria.nome : '-')}</p>
+          <p className="provai" style={(!singleProduct.categoria || (singleProduct.categoria && !singleProduct.categoria.img)) ? {} : {textShadow: (indice%2!=0 ? (darkMode ? shadowd : shadowl) : (darkMode ? shadowl : shadowd))}}>{'categoria: '+((singleProduct.categoria && singleProduct.categoria.nome) ? singleProduct.categoria.nome : '-')}</p>
           </div>
       {/*</p>*/}
         <p className="card-text m-1">{'colore: '+((singleProduct.colore && singleProduct.colore.nome) ? singleProduct.colore.nome : '-')}</p>
